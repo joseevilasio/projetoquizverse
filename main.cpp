@@ -3,6 +3,8 @@
 #include <stdlib.h>
 //#include <conio.h>
 #include <locale.h>
+#include <fstream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -29,8 +31,9 @@ int signin(){
 
     cout << "|  - - REGISTO - - |" << endl;
     cout << "Digite seu nome: ";
-    cin >> usuario.nomeCompleto;
+    getline(cin, usuario.nomeCompleto);
     cout << "Digite seu email: ";
+    //#TODO adicionar função para verificar se o email já existe no banco de dados
     cin >> usuario.email;
     cout << "Digite seu password: ";
     cin >> usuario.password;
@@ -64,10 +67,21 @@ int signin(){
         }
     }
 
-    cin >> usuario.resposta;
+    getline(cin, usuario.resposta);
     cout << "" << endl;
+    //#TODO adicionar funcão loading
     cout << "Cadastro realizado com sucesso!!!";
     limparTela();
+
+    ofstream arquivo("assets/database.txt", ios::app);
+
+    if (arquivo.is_open()) {
+        arquivo << "" << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password << "," << usuario.pergunta << "," << usuario.resposta << "," << usuario.pontos << endl;
+        arquivo.close();
+    } else {
+        cout << "Falha na gravação do arquivo." << endl;
+    }
+
     return 0;
 }
 
