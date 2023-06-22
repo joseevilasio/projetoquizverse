@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <stdio.h>
 #include <stdlib.h>
 //#include <conio.h>
 #include <locale.h>
@@ -10,6 +9,24 @@ using namespace std;
 void limparTela(){
     //Limpa tela do terminal
     system("CLS");
+}
+
+int signin(){
+
+    string nomeCompleto, email, password;
+
+    cout << "|  - - REGISTO - - |" << endl;
+    cout << "Digite seu nome: ";
+    cin >> nomeCompleto;
+    cout << "Digite seu email: ";
+    cin >> email;
+    cout << "Digite seu password: ";
+    cin >> password;
+
+    cout << "" << endl;
+    cout << "Cadastro realizado com sucesso!!!";
+
+    return 0;
 }
 
 
@@ -45,7 +62,8 @@ int main() {
             case 2: 
             limparTela();
             //inserir tela de cadastro
-            cout << "Tela Cadastro" << endl;    
+            cout << "Tela Cadastro" << endl;
+            signin();   
             break;
 
             case 3: 
