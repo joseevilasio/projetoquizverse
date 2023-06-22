@@ -12,6 +12,10 @@ void limparTela(){
     system("CLS");
 }
 
+int telaTemas(){
+    
+}
+
 
 
 int main() {
