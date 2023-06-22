@@ -12,23 +12,64 @@ void limparTela(){
 }
 
 int signin(){
+    //Cadastro de usuário, recebe informações sobre usuário e armezena em arquivo txt
 
-    string nomeCompleto, email, password;
+    struct tipoUsuario {
+        // struct para armazenar os dados do usuário
+        string nomeCompleto, email, password, pergunta, resposta;
+        int pontos = 0;
+    };
+
+    typedef struct tipoUsuario tipoUsuario; //facilitar a leitura de criação da struct
+
+    tipoUsuario usuario; //usuario agora é uma objeto do tipo struct
+    
+    int opcao; //variável utilizada na escolha da pergunta de recuperação da palavra passe
+    bool condicao = true; //variavel de controle da condição de parada do while
 
     cout << "|  - - REGISTO - - |" << endl;
     cout << "Digite seu nome: ";
-    cin >> nomeCompleto;
+    cin >> usuario.nomeCompleto;
     cout << "Digite seu email: ";
-    cin >> email;
+    cin >> usuario.email;
     cout << "Digite seu password: ";
-    cin >> password;
+    cin >> usuario.password;
+    
+    while (condicao) {
+        cout << " -- Escolha a pergunta de recuperação de conta -- " << endl;
+        cout << "1 - Qual é o nome do seu formador preferido?" << endl;
+        cout << "2 - Qual foi o nome do seu primeiro pet?" << endl;
+        cout << "3 - Qual a cidade que você nasceu?" << endl;    
+        cin >> opcao;
 
+        switch (opcao) {
+            case 1:
+                usuario.pergunta = "Qual é o nome do seu formador preferido?";
+                condicao = false;
+                cout << "1 - Qual é o nome do seu formador preferido?" << endl;               
+                break;
+            case 2:
+                usuario.pergunta = "Qual foi o nome do seu primeiro pet?";
+                condicao = false;
+                cout << "2 - Qual foi o nome do seu primeiro pet?" << endl;  
+                break;
+            case 3:
+                usuario.pergunta = "Qual a cidade que você nasceu?";
+                condicao = false;
+                cout << "3 - Qual a cidade que você nasceu?" << endl; 
+                break;                
+            default:
+                cout << "A " << opcao << " é uma entrada incorreta! - Tente novamente." << endl;
+                break;
+        }
+    }
+
+    cin >> usuario.resposta;
     cout << "" << endl;
     cout << "Cadastro realizado com sucesso!!!";
-
+    limparTela();
     return 0;
 }
-
 
 
 int main() {
@@ -45,9 +86,9 @@ int main() {
     while (opcao != 3) {
 
     cout << "" << endl;
-    cout << "1 Login" << endl;
-    cout << "2 Signin" << endl;
-    cout << "3 Sair" << endl;
+    cout << "1 > Login" << endl;
+    cout << "2 > Signin" << endl;
+    cout << "3 > Sair" << endl;
     cout << ">>>";
     cin >> opcao;
 
