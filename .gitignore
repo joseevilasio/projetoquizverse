@@ -32,3 +32,6 @@
 *.app
 .vscode/tasks.json
 main
+teste.cpp
+teste
+.vscode/settings.json
