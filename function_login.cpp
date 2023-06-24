@@ -40,6 +40,10 @@ bool validarPassword(string email, string password){
 bool recuperacaoPassword(){
     //Solicita email e exibe pergunta de recuperação e valida se o pergunta é o que consta no banco de dados
     ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    string resposta, email;
+
+    cout << "Digite seu email: ";    
+    cin >> email;
     
     if (arquivo.is_open()){
         string linha;
@@ -53,11 +57,17 @@ bool recuperacaoPassword(){
                 dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
             }
                 
-            if (email == dados[1]){                
-                if(password == dados[2]){
+            if (email == dados[1]){
+                cout << corLetra("ciano") << dados[3] << resetCor() << endl;
+                cin.ignore();
+                getline(cin, resposta);                
+                cout << "" << endl;
+
+                if(resposta == dados[3]){
+                    cout << corLetra("verde") << corFundo("branco") << dados[3] << endl;
                     return true;
                     break;                
-                }  
+                } else{cout << "erro";}
             }
         }
         arquivo.close();

@@ -28,7 +28,8 @@ int main() {
     cout << "" << endl;
     cout << "1 > Login" << endl;
     cout << "2 > Signin" << endl;
-    cout << "3 > Sair" << endl;
+    cout << "3 > Recuperar Palavra-Passe" << endl;   
+    cout << "4 > Sair" << endl;
     cout << ">>> ";
     cin >> opcao;
 
@@ -40,10 +41,13 @@ int main() {
             if (login() == true){
                 cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU - ¦ - |" << resetCor() << endl;
                 //inserir menu de usuario logado
+                // opções de jogar, regras, eliminar, ranking, reset de pontos
 
             } else{
+                load();
+                limparTela();
                 cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RECUPERAÇÃO DE PALAVRA-PASSE - ¦ - |" << resetCor() << endl;
-                recuperacaoPassword();
+                recuperacaoPassword(); // redirecionar para o menu inicial
             }            
             break;
 
@@ -52,7 +56,18 @@ int main() {
             signin();
             break;
 
-            case 3: //Sair
+            case 3: //Recuperar palavra passe
+            limparTela();
+            load();
+            limparTela();
+            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RECUPERAÇÃO DE PALAVRA-PASSE - ¦ - |" << resetCor() << endl;
+            if (recuperacaoPassword() == true){
+                cout << "senha recuperada"; // redirecionar para o menu inicial
+            }
+            break;
+
+
+            case 4: //Sair
             limparTela();
             //inserir tela de despedida
             cout << corLetra("vermelho") << corFundo("branco") << "Tela Despedida" << resetCor() << endl;
