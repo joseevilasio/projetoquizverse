@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <sstream>
 #include <vector>
+#include <termios.h>
 #include "function_utils.cpp"
 #ifndef FUNCTION_SIGNIN_H
 #define FUNCTION_SIGNIN_H
@@ -41,6 +42,49 @@ bool validarEmail(string email){
         cout << "Falha ao abrir o arquivo." << endl;
     }
     return false;
+}
+
+string mascararPassword() {
+    //Recebe um password digitado pelo usuário e mascara cada caracte e da um retorno em uma string   
+
+    string password;
+    char ch;
+
+     #ifdef _WIN32
+
+        while ((ch = _getch()) != '\r') {
+            if (ch == '\b') {
+                if (!password.empty()) {
+                    password.pop_back();
+                    cout << "\b \b";
+                }
+            } else {
+                password += ch;
+                cout << "*";
+            }
+        }
+
+        return password;
+
+    #elif defined __unix__ 
+        //estrutura para utilizar em linux
+        struct termios oldTermios, newTermios;
+        tcgetattr(STDIN_FILENO, &oldTermios);
+        newTermios = oldTermios;
+        newTermios.c_lflag &= ~(ECHO | ECHOE | ECHOK | ECHONL | ICANON);
+        tcsetattr(STDIN_FILENO, TCSANOW, &newTermios);
+
+        while ((ch = getchar()) != '\n') {
+            password += ch;
+            cout << "*";
+        }
+
+        tcsetattr(STDIN_FILENO, TCSANOW, &oldTermios);
+
+        return password;
+
+    #endif
+    
 }
 
 
@@ -83,7 +127,8 @@ int signin(){
     }
 
     cout << "Digite seu password: ";
-    cin >> usuario.password;
+    cin.ignore();
+    usuario.password = mascararPassword();
     
     while (condicao) {
         cout << " -- Escolha a pergunta de recuperação de conta -- " << endl;
@@ -118,12 +163,14 @@ int signin(){
     getline(cin, usuario.resposta);
     cout << "" << endl;
 
+    //recurso visual de loading e apresentar que cadastro foi realizado
     limparTela();
     load();
     cout << "Cadastro realizado com sucesso!!!";
     usleep(500000);
     limparTela();
 
+    //abrir o arquivo de database e salvar as informações coletadas
     ofstream arquivo("assets/database.txt", ios::app);
 
     if (arquivo.is_open()) {
