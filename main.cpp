@@ -28,7 +28,7 @@ int main() {
     cout << "1 > Login" << endl;
     cout << "2 > Signin" << endl;
     cout << "3 > Sair" << endl;
-    cout << ">>>";
+    cout << ">>> ";
     cin >> opcao;
 
         switch (opcao) {

@@ -6,11 +6,10 @@
 #include <fstream>
 #include <unistd.h>
 #include <sstream>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
 #include <vector>
+#include "function_utils.cpp"
+#ifndef FUNCTION_SIGNIN_H
+#define FUNCTION_SIGNIN_H
 
 
 using namespace std;
@@ -61,12 +60,28 @@ int signin(){
     int opcao; //variável utilizada na escolha da pergunta de recuperação da palavra passe
     bool condicao = true; //variavel de controle da condição de parada do while
 
-    cout << "|  - - REGISTO - - |" << endl;
+    cout << "|  - ¦ - REGISTO - ¦ - |" << endl;
+    cout << "" << endl;
+
     cout << "Digite seu nome: ";
-    getline(cin, usuario.nomeCompleto);
-    cout << "Digite seu email: ";
-    //#TODO adicionar função para verificar se o email já existe no banco de dados
+    cin.ignore(); // Limpa o buffer do cin
+    getline(cin, usuario.nomeCompleto);    
+
+    cout << "Digite seu email: ";    
     cin >> usuario.email;
+
+    //Verificar se o email já existe no banco de dados
+
+    if (validarEmail(usuario.email) == true){
+        limparTela();
+        cout << "___________________________________________" << endl;
+        cout << " O email '" << usuario.email << "' já está cadastrado." << endl;
+        cout << " Tente novamente ou faça login!" << endl;
+        cout << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
+        sleep(5);
+        return 1;
+    }
+
     cout << "Digite seu password: ";
     cin >> usuario.password;
     
@@ -99,8 +114,11 @@ int signin(){
         }
     }
 
+    cin.ignore(); // Limpa o buffer do cin
     getline(cin, usuario.resposta);
     cout << "" << endl;
+    
+    limparTela();
     //#TODO adicionar funcão loading
     cout << "Cadastro realizado com sucesso!!!";
     limparTela();
@@ -116,3 +134,5 @@ int signin(){
 
     return 0;
 }
+
+#endif
