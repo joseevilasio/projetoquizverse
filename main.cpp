@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include "function_signin.cpp"
 #include "function_utils.cpp"
+#include "function_login.cpp"
 
 using namespace std;
 
@@ -32,24 +33,29 @@ int main() {
     cin >> opcao;
 
         switch (opcao) {
-            case 1:
-            limparTela();            
-            //inserir tela de login
-            cout << "Tela Login" << endl;            
-            exit(0);
-            break;
 
-            case 2: 
+            case 1: //Login
             limparTela();
-            //inserir tela de cadastro
-            cout << "Tela Cadastro" << endl;
-            signin();   
+            //Tela de login
+            if (login() == true){
+                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU - ¦ - |" << resetCor() << endl;
+                //inserir menu de usuario logado
+
+            } else{
+                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RECUPERAÇÃO DE PALAVRA-PASSE - ¦ - |" << resetCor() << endl;
+                recuperacaoPassword();
+            }            
             break;
 
-            case 3: 
+            case 2: //Registo
+            limparTela();
+            signin();
+            break;
+
+            case 3: //Sair
             limparTela();
             //inserir tela de despedida
-            cout << "Tela Despedida" << endl;
+            cout << corLetra("vermelho") << corFundo("branco") << "Tela Despedida" << resetCor() << endl;
             break;
 
             default: cout << "A " << opcao << " é uma entrada incorreta! - Tente novamente." << endl; limparTela(); break;
