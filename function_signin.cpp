@@ -117,10 +117,11 @@ int signin(){
     cin.ignore(); // Limpa o buffer do cin
     getline(cin, usuario.resposta);
     cout << "" << endl;
-    
+
     limparTela();
-    //#TODO adicionar funcão loading
+    load();
     cout << "Cadastro realizado com sucesso!!!";
+    usleep(500000);
     limparTela();
 
     ofstream arquivo("assets/database.txt", ios::app);
