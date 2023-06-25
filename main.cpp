@@ -23,8 +23,9 @@ int main() {
     //inserir funcao
 
     //estruturar um if quando a funcao Boas Vindas tiver pronta
-    while (opcao != 3) {
-
+    while (opcao != 4) {
+    
+    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Inicial - QuizVerse - ¦ - |" << resetCor() << endl;
     cout << "" << endl;
     cout << "1 > Login" << endl;
     cout << "2 > Signin" << endl;
@@ -39,15 +40,18 @@ int main() {
             limparTela();
             //Tela de login
             if (login() == true){
-                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU - ¦ - |" << resetCor() << endl;
+                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Jogo - QuizVerse - ¦ - |" << resetCor() << endl;
                 //inserir menu de usuario logado
                 // opções de jogar, regras, eliminar, ranking, reset de pontos
 
             } else{
                 load();
+                limparTela();                
+                if (recuperacaoPassword() == true){
                 limparTela();
-                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RECUPERAÇÃO DE PALAVRA-PASSE - ¦ - |" << resetCor() << endl;
-                recuperacaoPassword(); // redirecionar para o menu inicial
+                load();
+                // redirecionar para o menu inicial
+                } else{opcao = 4;} //adicionar tela de bloqueio
             }            
             break;
 
@@ -59,19 +63,20 @@ int main() {
             case 3: //Recuperar palavra passe
             limparTela();
             load();
-            limparTela();
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RECUPERAÇÃO DE PALAVRA-PASSE - ¦ - |" << resetCor() << endl;
+            limparTela();            
             if (recuperacaoPassword() == true){
-                cout << "senha recuperada"; // redirecionar para o menu inicial
-            }
+                limparTela();
+                load();
+                // redirecionar para o menu inicial
+            } else{opcao = 4;} //adicionar tela de bloqueio
             break;
-
 
             case 4: //Sair
             limparTela();
             //inserir tela de despedida
             cout << corLetra("vermelho") << corFundo("branco") << "Tela Despedida" << resetCor() << endl;
             break;
+            exit(0);
 
             default: cout << "A " << opcao << " é uma entrada incorreta! - Tente novamente." << endl; limparTela(); break;
         }

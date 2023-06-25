@@ -32,7 +32,7 @@ void load(){
 
 string corLetra(string cor) {
     // Recebe um argumento de cor     
-    // Disponiveis [red][green][]
+    // Disponiveis
 
     //cores letras
     string vermelho = "\033[1;31m";
