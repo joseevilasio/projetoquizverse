@@ -19,14 +19,12 @@ void limparTela(){
 void load(){
     //A função imprime na tela loading de 0% até 100%    
     
-    for (int cont = 1; cont < 101; cont++){
-
+    for (int cont = 1; cont < 101; cont++){        
         cout.flush();
         cout << "" << cont << "% ";
-        usleep(60000);
+        usleep(50000);
         limparTela();      
-        cout.flush();       
-        
+        cout.flush(); 
     }
     limparTela();  
 }
@@ -56,6 +54,8 @@ string corLetra(string cor) {
     }else if (cor == "ciano"){
         return ciano;
     }else{"";}
+
+    return "";
 }
 
 string corFundo(string cor) {
@@ -81,6 +81,8 @@ string corFundo(string cor) {
     }else if (cor == "ciano"){
         return ciano;
     }else{"";}
+
+    return "";
 }
 
 string resetCor(){

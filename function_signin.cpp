@@ -104,7 +104,7 @@ int signin(){
     int opcao; //variável utilizada na escolha da pergunta de recuperação da palavra passe
     bool condicao = true; //variavel de controle da condição de parada do while
 
-    cout << "|  - ¦ - REGISTO - ¦ - |" << endl;
+    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - REGISTO - ¦ - |" << resetCor() << endl;
     cout << "" << endl;
 
     cout << "Digite seu nome: ";

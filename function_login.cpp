@@ -7,7 +7,7 @@
 
 using namespace std;
 
-bool validarPassword(string email, string password){
+bool validarPassword(string userEmail, string password){
     //Recebe um argumento com string e valida se o password é o que consta no banco de dados
     ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
     
@@ -23,7 +23,7 @@ bool validarPassword(string email, string password){
                 dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
             }
                 
-            if (email == dados[1]){
+            if (userEmail == dados[1]){
                 if(password == dados[2]){
                     return true;
                     break;                
@@ -97,17 +97,17 @@ bool recuperacaoPassword(){
     return false;
 }
 
-bool login(){
+bool login(string &userEmail){
     //Solicita email e senha do usuario para validar    
     int quantErros = 0;
-    string userEmail, userPassword;
+    string userPassword;
 
     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - LOGIN - ¦ - |" << resetCor() << endl;    
 
     while(quantErros != 3){
 
         cout << endl;
-        cout << "Email: ";       
+        cout << "Email: ";
         cin.ignore();
         cin >> userEmail;
         cout << endl;
@@ -136,6 +136,77 @@ bool login(){
         cout << corLetra("vermelho") << endl;
         cout << "Usuário excedeu as quantidades de tentativas de login. 3 erros." << resetCor() << endl;
         return false;
+    }
+
+    return false;
+}
+
+void eliminarConta(){
+    //Recebe o argumento de email e após a confirmação apaga a conta
+    int opcao;
+
+    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - ELIMINAR CONTA - ¦ - |" << resetCor() << endl;
+    cout << corLetra("vermelho") << "Tem certeza que deseja eliminar a conta ?" << resetCor() << endl;
+    cout << corLetra("vermelho") << "1 - SIM!" << resetCor() << endl;
+    cout << corLetra("azul") << "2 - Não, voltar para menu anterior." << resetCor() << endl;
+    cin >> opcao;
+
+    if (opcao == 1){
+
+    }
+}
+
+void consultarPontos(string userEmail){
+    //recebe email e exibe os pontos registados
+    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    
+    if (arquivo.is_open()){
+        string linha;
+
+        while (getline(arquivo, linha)) {
+            istringstream iss(linha);
+            string dado;
+            vector<string> dados;
+
+            while (getline(iss, dado, ',')) {
+                dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
+            }
+                
+            if (userEmail == dados[1]){
+                cout << dados[5];
+                break;  
+            }
+        }
+        arquivo.close();
+    } else {
+        cout << "Falha ao abrir o arquivo." << endl;
+    }
+}
+
+void consultarNome(string userEmail){
+    //recebe email e exibe o nome cadastrado
+    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    
+    if (arquivo.is_open()){
+        string linha;
+
+        while (getline(arquivo, linha)) {
+            istringstream iss(linha);
+            string dado;
+            vector<string> dados;
+
+            while (getline(iss, dado, ',')) {
+                dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
+            }
+                
+            if (userEmail == dados[1]){
+                cout << dados[0];
+                break;  
+            }
+        }
+        arquivo.close();
+    } else {
+        cout << "Falha ao abrir o arquivo." << endl;
     }
 }
 
