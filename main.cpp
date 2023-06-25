@@ -3,8 +3,6 @@
 #include <stdlib.h>
 //#include <conio.h>
 #include <locale.h>
-#include <fstream>
-#include <unistd.h>
 #include "function_signin.cpp"
 #include "function_utils.cpp"
 #include "function_login.cpp"
@@ -82,7 +80,10 @@ int main() {
 
                         case 5: // Eliminar Conta
                         limparTela();                        
-                        eliminarConta();
+                        if (eliminarConta(userEmail) == 0){
+                            limparTela();
+                            opcaoMenuJogo = 6;
+                        }                        
                         break;
 
                         case 6: // Sair                        

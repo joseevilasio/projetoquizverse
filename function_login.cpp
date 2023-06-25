@@ -2,6 +2,7 @@
 #include <string>
 #include "function_utils.cpp"
 #include "function_signin.cpp"
+#include "function_database.cpp"
 #ifndef FUNCTION_LOGIN_H
 #define FUNCTION_LOGIN_H
 
@@ -141,9 +142,11 @@ bool login(string &userEmail){
     return false;
 }
 
-void eliminarConta(){
+int eliminarConta(string userEmail){
     //Recebe o argumento de email e após a confirmação apaga a conta
     int opcao;
+    string nomeArquivo = "assets/database.txt";
+    int linhaParaEliminar = consultarLinhadeArquivo(userEmail);
 
     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - ELIMINAR CONTA - ¦ - |" << resetCor() << endl;
     cout << corLetra("vermelho") << "Tem certeza que deseja eliminar a conta ?" << resetCor() << endl;
@@ -152,8 +155,12 @@ void eliminarConta(){
     cin >> opcao;
 
     if (opcao == 1){
-
+        eliminarLinhaArquivo(nomeArquivo, linhaParaEliminar);
+        limparTela();        
+        cout << corLetra("vermelho") << "Conta eliminada com sucesso." << resetCor();
+        return 0;
     }
+    return 1;
 }
 
 void consultarPontos(string userEmail){
