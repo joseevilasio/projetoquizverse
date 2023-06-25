@@ -17,7 +17,8 @@ int main() {
     setlocale(LC_ALL, "");
 
     //Declarar todas as variaveis aqui e comentar o que cada uma faz
-    int opcao; // variavel utilizada no while de Tela Registo/Login    
+    int opcao; // variavel utilizada no while de Tela Registo/Login 
+    int opcaoMenuJogo; // variavel utilizada no while do menu jogo
 
     //Exibir Tela de Boas Vindas, resulta em um return 0 (entrar) ou 1 (sair)
     //inserir funcao
@@ -40,13 +41,55 @@ int main() {
             limparTela();
             //Tela de login
             if (login() == true){
-                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Jogo - QuizVerse - ¦ - |" << resetCor() << endl;
-                //inserir menu de usuario logado
-                // opções de jogar, regras, eliminar, ranking, reset de pontos
+                //Após login realizado menu jogo                
+                while (opcaoMenuJogo != 6){
 
+                    limparTela();
+                    load();
+                    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Jogo - QuizVerse - ¦ - |" << resetCor() << endl;
+                    cout << "" << endl;
+                    cout << "1 > Jogar" << endl;
+                    cout << "2 > Ranking" << endl;
+                    cout << "3 > Reset de Pontos" << endl;   
+                    cout << "4 > Regras" << endl;
+                    cout << "5 > Eliminar Conta" << endl;
+                    cout << "6 > Sair" << endl;
+                    cout << ">>> ";
+                    cin >> opcaoMenuJogo;
+
+                    switch (opcaoMenuJogo){
+
+                        case 1: // Jogar
+                        load();
+                        break;
+
+                        case 2: // Ranking
+                        load();
+                        break;
+
+                        case 3: // Reset de Pontos
+                        load();
+                        break;
+
+                        case 4: // Regras
+                        load();
+                        break;
+
+                        case 5: // Eliminar Conta
+                        load();
+                        break;
+
+                        case 6: // Sair
+                        load();
+                        break;
+
+                        default: cout << "A " << opcaoMenuJogo << " é uma entrada incorreta! - Tente novamente." << endl; limparTela(); break;
+
+                    }
+                }
+                
             } else{
-                load();
-                limparTela();                
+                load();                
                 if (recuperacaoPassword() == true){
                 limparTela();
                 load();
@@ -62,8 +105,7 @@ int main() {
 
             case 3: //Recuperar palavra passe
             limparTela();
-            load();
-            limparTela();            
+            load();            
             if (recuperacaoPassword() == true){
                 limparTela();
                 load();

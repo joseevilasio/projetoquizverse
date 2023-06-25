@@ -28,6 +28,7 @@ void load(){
         cout.flush();       
         
     }
+    limparTela();  
 }
 
 string corLetra(string cor) {
