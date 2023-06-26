@@ -19,6 +19,8 @@ int main() {
     int opcao; // variavel utilizada no while de Tela Registo/Login 
     int opcaoMenuJogo; // variavel utilizada no while do menu jogo
     string userEmail; // variavel de email que será atualizada com email digitado pelo usuario
+    int opcaoTema, opcaoDificuldade; // variavel utilizada para definir tema e dificuldade
+    string press;
 
     //Exibir Tela de Boas Vindas, resulta em um return 0 (entrar) ou 1 (sair)
     //inserir funcao
@@ -69,10 +71,14 @@ int main() {
                     switch (opcaoMenuJogo){
 
                         case 1: // Jogar
-                        opcaoTema();                        
+                        if (escolherTema(opcaoTema, opcaoDificuldade) == 0){
+                            cout << "iniciar jogo";
+                        }                        
                         break;
 
-                        case 2: // Ranking                        
+                        case 2: // Ranking
+                        limparTela();                        
+                        ranking();      
                         break;
 
                         case 3: // Reset de Pontos                        
@@ -122,9 +128,8 @@ int main() {
             } else{opcao = 4;} //adicionar tela de bloqueio
             break;
 
-            case 4: //Sair
-            limparTela();
-            //inserir tela de despedida
+            case 4: //Sair            
+            //inserir tela de despedida            
             cout << corLetra("vermelho") << corFundo("branco") << "Tela Despedida" << resetCor() << endl;
             break;
             exit(0);

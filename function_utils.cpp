@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
+#include <vector>
 #ifndef FUNCTION_UTILS_H
 #define FUNCTION_UTILS_H
 
@@ -91,6 +92,32 @@ string resetCor(){
 
     return reset;
 
+}
+
+void loadX(){
+    //teste para aprimorar load   
+    
+    for (int cont = 1; cont < 101; cont++){        
+        
+        cout << corFundo("branco") << "  ";
+        load();
+
+    } 
+}
+
+
+string calcularEspaco(int tamanho) {
+    string espaco = " ";    
+    string resultado;
+
+    int multiplicador = 21 - tamanho;
+
+    for (int i = 0; i < multiplicador; i++) {
+        resultado += espaco;
+    }
+
+  return resultado;
+    
 }
 
 
