@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+.vscode/tasks.json
+main
+teste.cpp
+teste
+.vscode/settings.json
+function_database
