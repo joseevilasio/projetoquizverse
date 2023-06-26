@@ -6,6 +6,7 @@
 #include "function_signin.cpp"
 #include "function_utils.cpp"
 #include "function_login.cpp"
+#include "function_game.cpp"
 
 using namespace std;
 
@@ -67,7 +68,8 @@ int main() {
 
                     switch (opcaoMenuJogo){
 
-                        case 1: // Jogar                        
+                        case 1: // Jogar
+                        opcaoTema();                        
                         break;
 
                         case 2: // Ranking                        
