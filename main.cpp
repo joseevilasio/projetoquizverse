@@ -62,6 +62,7 @@ int main() {
                     cout << "6 > Sair" << endl;
                     cout << ">>> ";
                     cin >> opcaoMenuJogo;
+                    limparTela();
 
 
                     switch (opcaoMenuJogo){

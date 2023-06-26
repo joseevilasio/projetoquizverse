@@ -131,6 +131,7 @@ int signin(){
     usuario.password = mascararPassword();
     
     while (condicao) {
+        cout << "" << endl;
         cout << " -- Escolha a pergunta de recuperação de conta -- " << endl;
         cout << "1 - Qual é o nome do seu formador preferido?" << endl;
         cout << "2 - Qual foi o nome do seu primeiro pet?" << endl;
@@ -166,9 +167,8 @@ int signin(){
     //recurso visual de loading e apresentar que cadastro foi realizado
     limparTela();
     load();
-    cout << "Cadastro realizado com sucesso!!!";
+    cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << endl;
     usleep(500000);
-    limparTela();
 
     //abrir o arquivo de database e salvar as informações coletadas
     ofstream arquivo("assets/database.txt", ios::app);

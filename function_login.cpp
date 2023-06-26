@@ -157,7 +157,7 @@ int eliminarConta(string userEmail){
     if (opcao == 1){
         eliminarLinhaArquivo(nomeArquivo, linhaParaEliminar);
         limparTela();        
-        cout << corLetra("vermelho") << "Conta eliminada com sucesso." << resetCor();
+        cout << corLetra("vermelho") << "Conta eliminada com sucesso." << resetCor() << endl;
         return 0;
     }
     return 1;
