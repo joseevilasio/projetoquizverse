@@ -130,13 +130,16 @@ int main() {
             } else{opcao = 4;} //adicionar tela de bloqueio
             break;
 
-            case 4: //Sair 
-            cout << "sair" << endl;       
+            case 4: //Sair      
             telaSaida();
             exit(0);
             break;
 
-            default: cout << "A " << opcao << " é uma entrada incorreta! - Tente novamente." << endl; limparTela(); break;
+            default: cout << "" << opcao << " é uma entrada incorreta! - Tente novamente." << endl; 
+            cout << "Pressione enter para voltar...";
+            getch();
+            limparTela();
+            break;
         }
     }
 
