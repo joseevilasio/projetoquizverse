@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctype.h>
 #ifndef FUNCTION_UTILS_H
 #define FUNCTION_UTILS_H
 
@@ -120,5 +121,38 @@ string calcularEspaco(int tamanho) {
     
 }
 
+//Tela Inicial
+
+void telaInicial(){
+
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "QuizVerse" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "Pressione qualquer tecla para continuar..." ;
+    getch();
+    limparTela();
+
+
+}
+
+//Tela de Saida
+
+void telaSaida(){
+
+    int opcao;
+
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "QuizVerse" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "Projeto Realizado por: " << endl;
+    cout << "Hugo Magalhaes" << endl;
+    cout << "Jose Junior" << endl;
+    cout << "Patricia Correia" << endl;
+    cin >> opcao;
+}
 
 #endif
