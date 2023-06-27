@@ -71,8 +71,8 @@ int main() {
                     switch (opcaoMenuJogo){
 
                         case 1: // Jogar
-                        if (escolherTema(opcaoTema, opcaoDificuldade) == 0){
-                            cout << "iniciar jogo";
+                        if (escolherTema(opcaoTema, opcaoDificuldade) == 0){                            
+                            jogar(opcaoTema, opcaoDificuldade, userEmail);
                         }                        
                         break;
 
