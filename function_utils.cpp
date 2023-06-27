@@ -122,34 +122,37 @@ string calcularEspaco(int tamanho) {
 }
 
 //Tela Inicial
-int telaInicial(){
 
-    char opcao;
-
-    cout << "QuizVerse";
-    while(opcao != 'B') {
+void telaInicial(){
 
     cout << "" << endl;
-    cout << "A - Entrar" << endl;
-    cout << "B - Sair" << endl;
+    cout << "" << endl;
+    cout << "QuizVerse" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "Pressione qualquer tecla para continuar..." ;
+    getch();
+    limparTela();
+
+
+}
+
+//Tela de Saida
+
+void telaSaida(){
+
+    int opcao;
+
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "QuizVerse" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "Projeto Realizado por: " << endl;
+    cout << "Hugo Magalhaes" << endl;
+    cout << "Jose Junior" << endl;
+    cout << "Patricia Correia" << endl;
     cin >> opcao;
-    opcao = toupper(opcao);
-
-        switch (opcao) {
-            case 'A':
-            break;
-
-            case 'B' :
-            return 4;
-            break;
-
-            default: cout << "Opção Inválida. Tente Novamente!" << endl;
-        }
-
-    }
-
-    return 0;
-
 }
 
 #endif

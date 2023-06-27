@@ -23,21 +23,23 @@ int main() {
     string press;
 
     //Exibir Tela de Boas Vindas, resulta em um return A (entrar), B (sair) ou default (Erro).
-    opcao = telaInicial();
+    
 
     //estruturar um if quando a funcao Boas Vindas tiver pronta
     while (opcao != 4) {
 
-    //load();
-    
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Inicial - QuizVerse - ¦ - |" << resetCor() << endl;
-    cout << "" << endl;
-    cout << "1 > Login" << endl;
-    cout << "2 > Signin" << endl;
-    cout << "3 > Recuperar Palavra-Passe" << endl;   
-    cout << "4 > Sair" << endl;
-    cout << ">>> ";
-    cin >> opcao;
+        telaInicial();
+
+        //load();
+        
+        cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Inicial - QuizVerse - ¦ - |" << resetCor() << endl;
+        cout << "" << endl;
+        cout << "1 > Login" << endl;
+        cout << "2 > Signin" << endl;
+        cout << "3 > Recuperar Palavra-Passe" << endl;   
+        cout << "4 > Sair" << endl;
+        cout << ">>> ";
+        cin >> opcao;
 
         switch (opcao) {
 
@@ -128,12 +130,11 @@ int main() {
             } else{opcao = 4;} //adicionar tela de bloqueio
             break;
 
-            case 4: //Sair            
-            //inserir tela de despedida  
-            //adicionar funcao saida          
-            cout << corLetra("vermelho") << corFundo("branco") << "Tela Despedida" << resetCor() << endl;
-            break;
+            case 4: //Sair 
+            cout << "sair" << endl;       
+            telaSaida();
             exit(0);
+            break;
 
             default: cout << "A " << opcao << " é uma entrada incorreta! - Tente novamente." << endl; limparTela(); break;
         }
