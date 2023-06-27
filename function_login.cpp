@@ -163,7 +163,7 @@ int eliminarConta(string userEmail){
     return 1;
 }
 
-void consultarPontos(string userEmail){
+int consultarPontos(string userEmail){
     //recebe email e exibe os pontos registados
     ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
     
@@ -180,7 +180,8 @@ void consultarPontos(string userEmail){
             }
                 
             if (userEmail == dados[1]){
-                cout << dados[5];
+                int pontos = stoi(dados[5]);
+                return pontos;
                 break;  
             }
         }
@@ -188,6 +189,7 @@ void consultarPontos(string userEmail){
     } else {
         cout << "Falha ao abrir o arquivo." << endl;
     }
+    return 0;
 }
 
 void consultarNome(string userEmail){

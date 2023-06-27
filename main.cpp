@@ -53,9 +53,7 @@ int main() {
                     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Jogo - QuizVerse - ¦ - |" << resetCor() << endl;
                     cout << corLetra("ciano") << corFundo("branco");
                     consultarNome(userEmail);
-                    cout  << " - Total de ";
-                    consultarPontos(userEmail);
-                    cout << " pontos." << resetCor() << endl;                
+                    cout  << " - Total de " << consultarPontos(userEmail) << " pontos." << resetCor() << endl;
                     cout << "" << endl;
                     cout << "1 > Jogar" << endl;
                     cout << "2 > Ranking" << endl;

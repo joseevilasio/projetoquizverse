@@ -124,37 +124,37 @@ void ranking(){
 }
 
 int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
-
+    // Recebe as informações de escolha de tema e dificuldade, email e inicia leitura de arquivo de perguntas
     string path;
 
     switch (opcaoTema) {
         case 1: // 1 > Tema Geografia e Cultura
             if (opcaoDificuldade == 1){path = "assets/1_geografia_1_faceis.txt";}
             else if (opcaoDificuldade == 2){path = "assets/1_geografia_2_normais.txt";}
-            else if (opcaoDificuldade == 3){path = "assets/1_geografia_1_dificeis.txt";}
+            else if (opcaoDificuldade == 3){path = "assets/1_geografia_3_dificeis.txt";}
             break;
 
         case 2: // 2 > Tema Fisica e Matemática
-            if (opcaoDificuldade == 1){cout << "";}
-            else if (opcaoDificuldade == 2){cout << "";}
-            else if (opcaoDificuldade == 3){cout << "";}
+            if (opcaoDificuldade == 1){path = "assets/2_matematica_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){path = "assets/2_matematica_2_normais.txt";}
+            else if (opcaoDificuldade == 3){path = "assets/2_matematica_3_dificeis.txt";}
             break;
 
 
         case 3: // 3 > Tema Química e Biologia
-            if (opcaoDificuldade == 1){cout << "";}
-            else if (opcaoDificuldade == 2){cout << "";}
-            else if (opcaoDificuldade == 3){cout << "";}
+            if (opcaoDificuldade == 1){path = "assets/3_quimica_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){path = "assets/3_quimica_2_normais.txt";}
+            else if (opcaoDificuldade == 3){path = "assets/3_quimica_3_dificeis.txt";}
             break;
         
         default:
             break;
     }
 
-    ifstream arquivo(path);
+    ifstream arquivo(path); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas
 
-    int pontosUser = 0;
-    int pontosJogo = 10;
+    int pontosUser = 0; //Pontos de inicio da partida
+    int pontosJogo = 5; //Pontos para cada pergunta correta
     int contador = 1;
     
     if (arquivo.is_open()){
@@ -171,11 +171,13 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
 
             char respostaUser;
             char respostaCorreta = 'a';
+            contador++;
 
-            // controle de termino
+            // controle de fim de while da leitura de arquivo
             if (contador == 11){
+                int _pontosUser = consultarPontos(userEmail) + pontosUser;                
+                modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
                 return pontosUser;
-                modificarPontos(userEmail, pontosUser);
                 break;
             } 
 
@@ -192,9 +194,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             cout << dados[4] << endl; //Resposta C
             cout << dados[5] << endl; //Resposta D
             cout << ">>> ";
-            cin >> respostaUser;
-
-            contador++;
+            cin >> respostaUser;            
 
             if(respostaUser == respostaCorreta){
                 cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
