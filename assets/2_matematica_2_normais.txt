@@ -1,10 +1,10 @@
-Matemática e Física, 1.Qual das alternativas, corresponde à unidade de medida da corrente elétrica?, a) Litros, b) Celsius, c) Pascal, d) Ampére, resposta correta: d.
-Matemática e Física, 2.Qual a área e o perímetro de um campo de futebol, de base 25 m e altura 5 m?, a) A= 100m², P= 50m, b) A= 150 m², P= 60m, c) A= 125 m², P= 60 m, d) A= 120 m², P= 50 m, resposta correta: c.
-Matemática e Física, 3.Qual é a medida no Sistema Internacional de luminosidade?, a)Lúmen, b)Candela, c)Watt, d)Claro e escuro, resposta correta b.
-Matemática e Física, 4.Qual é a equação relacionada a lei de Ohm?, a) R = V/I, b) R = I/V, c) R = P/I, d) R = I/P, Resposta correta: a.
-Matemática e Física, 5.Quem formulou a teoria dos conjuntos e desenvolveu os fundamentos da matemática moderna?, a) Leonhard Euler, b) René Descartes, c) Carl Friedrich Gauss, d) Georg Cantor, Resposta correta: d.
-Matemática e Física, 6. Qual é a fórmula correta para calcular a área de um círculo de raio (r)?, a) A = 2πr, b) A = πr², c) A = 1/2πr, d) A = 4πr², Resposta correta: b.
-Matemática e Física, 7.Qual é o valor da constante de aceleração gravitacional (g) na superfície da Terra?, a) 6.673 x 10^(-11) N/m²kg², b) 9.81 m/s², c) 3.00 x 10^8 m/s, d) 3.14, Resposta correta: b.
-Matemática e Física, 8.Qual é a unidade de medida utilizada para expressar a meia-vida de um isótopo radioativo?, a) Segundos (s), b) Anos (a), c) Gramas (g), d) Candelas (cd), resposta correta: b.
-Matemática e Física, 9.Qual é a partícula fundamental que compõe os neutrões e prótões no núcleo atômico?, a) Elétrão, b) cargas positivas, c) Méson, d) Quark, resposta correta: d.
-Matemática e Física, 10.Qual é o processo pelo qual dois núcleos leves se combinam para formar um núcleo mais pesado?, a) Fissão nuclear, b) Fusão nuclear, c) Desintegração radioativa, d) Captura de elétron, resposta correta: b.
+Matemática e Física,Qual das alternativas, corresponde à unidade de medida da corrente elétrica?, a) Litros, b) Celsius, c) Pascal, d) Ampére,d
+Matemática e Física,Qual a área e o perímetro de um campo de futebol, de base 25 m e altura 5 m?, a) A= 100m², P= 50m, b) A= 150 m², P= 60m, c) A= 125 m², P= 60 m, d) A= 120 m², P= 50 m,c
+Matemática e Física,Qual é a medida no Sistema Internacional de luminosidade?, a)Lúmen, b)Candela, c)Watt, d)Claro e escuro,b
+Matemática e Física,Qual é a equação relacionada a lei de Ohm?, a) R = V/I, b) R = I/V, c) R = P/I, d) R = I/P,a
+Matemática e Física,Quem formulou a teoria dos conjuntos e desenvolveu os fundamentos da matemática moderna?, a) Leonhard Euler, b) René Descartes, c) Carl Friedrich Gauss, d) Georg Cantor,d
+Matemática e Física,Qual é a fórmula correta para calcular a área de um círculo de raio (r)?, a) A = 2πr, b) A = πr², c) A = 1/2πr, d) A = 4πr²,b
+Matemática e Física,Qual é o valor da constante de aceleração gravitacional (g) na superfície da Terra?, a) 6.673 x 10^(-11) N/m²kg², b) 9.81 m/s², c) 3.00 x 10^8 m/s, d) 3.14,b
+Matemática e Física,Qual é a unidade de medida utilizada para expressar a meia-vida de um isótopo radioativo?, a) Segundos (s), b) Anos (a), c) Gramas (g), d) Candelas (cd),b
+Matemática e Física,Qual é a partícula fundamental que compõe os neutrões e prótões no núcleo atômico?, a) Elétrão, b) cargas positivas, c) Méson, d) Quark,d
+Matemática e Física,Qual é o processo pelo qual dois núcleos leves se combinam para formar um núcleo mais pesado?, a) Fissão nuclear, b) Fusão nuclear, c) Desintegração radioativa, d) Captura de elétron,b

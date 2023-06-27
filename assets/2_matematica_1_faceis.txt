@@ -1,13 +1,10 @@
-Matemática e Física, 1.Quem é conhecido como o pai da física moderna?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei, Resposta correta: b)
-Matemática e Física, 2.Qual cientista desenvolveu a teoria da relatividade?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei, Resposta correta: b)
-Matemática e Física, 3.Qual matemático é considerado o "príncipe dos matemáticos"?, a) Isaac Newton, b) Albert Einstein, c) Carl Friedrich Gauss, d) Pierre-Simon Laplace, Resposta correta: c)
-Matemática e Física, 4.Qual matemático formulou o famoso teorema de Pitágoras?, a) Euclides, b) René Descartes, c) Blaise Pascal, d) Pitágoras, Resposta correta: d)
-Matemática e Física, 5.Qual cientista descobriu as leis do movimento planetário?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei, Resposta correta: d)
-Matemática e Física, 6.Quem é considerado o pai da computação?, a) Alan Turing, b) Nikola Tesla, c) Charles Babbage, d) Isaac Newton, Resposta correta: c)
-Matemática e Física, 7.Qual cientista formulou as leis do movimento e a lei da gravitação universal?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei, Resposta correta: a)
-Matemática e Física, 8.Quem propôs a teoria da relatividade restrita?, a) Albert Einstein, b) Isaac Newton, c) Max Planck, d) Niels Bohr, Resposta correta: a)
-Matemática e Física, 9.Qual é a unidade de medida da carga elétrica?, a) Ampère, b) Joule, c) Coulomb, d) Volt, Resposta correta: c)
-Matemática e Física, 10.Quantos ovos tem uma dúzia?, a)10, b)11, c)13, d)12, resposta correta: d)
-
-
-
+Matemática e Física,Quem é conhecido como o pai da física moderna?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,b
+Matemática e Física,Qual cientista desenvolveu a teoria da relatividade?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,b
+Matemática e Física,Qual matemático é considerado o "príncipe dos matemáticos"?, a) Isaac Newton, b) Albert Einstein, c) Carl Friedrich Gauss, d) Pierre-Simon Laplace,c
+Matemática e Física,Qual matemático formulou o famoso teorema de Pitágoras?, a) Euclides, b) René Descartes, c) Blaise Pascal, d) Pitágoras,d
+Matemática e Física,Qual cientista descobriu as leis do movimento planetário?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,d
+Matemática e Física,Quem é considerado o pai da computação?, a) Alan Turing, b) Nikola Tesla, c) Charles Babbage, d) Isaac Newton,c
+Matemática e Física,Qual cientista formulou as leis do movimento e a lei da gravitação universal?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,a
+Matemática e Física,Quem propôs a teoria da relatividade restrita?, a) Albert Einstein, b) Isaac Newton, c) Max Planck, d) Niels Bohr,a
+Matemática e Física,Qual é a unidade de medida da carga elétrica?, a) Ampère, b) Joule, c) Coulomb, d) Volt,c
+Matemática e Física,Quantos ovos tem uma dúzia?, a)10, b)11, c)13, d)12,d

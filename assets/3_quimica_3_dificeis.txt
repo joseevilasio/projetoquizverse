@@ -1,10 +1,10 @@
-tema:Quimica e Biologia,1.Qual é o elemento químico mais eletronegativo?,a)Hidrogênio (H),b)Oxigênio (O),c)Flúor (F),d) Cloro (Cl),Resposta correta: c) 
-tema:Quimica e Biologia,2.Qual é a função principal dos catalisadores em reações químicas?,a) Aumentar a temperatura da reação,b) Aumentar a pressão da reação,c) Aumentar a velocidade da reação,d) Alterar o equilíbrio químico da reação,Resposta correta: c).
-tema:Quimica e Biologia,3.Qual é o nome dado ao processo de divisão celular que resulta em células haploides?,a)Mitose,b)Meiose,c) Replicação,d) Diferenciação,Resposta correta: b). 
-tema:Quimica e Biologia,4. Qual é o processo de formação de esporos em fungos?,a)Fotossíntese,b)Respiração celular,c)Fragmentação,d)Esporulação,Resposta correta: d)
-tema:Quimica e Biologia,5.Qual é o componente principal das membranas celulares?,a) Carboidratos,b) Ácidos nucleicos,c) Lipídios,d) Proteínas,Resposta correta: c).
-tema:Quimica e Biologia,6.Qual é o tipo de respiração que ocorre na ausência de oxigênio?,a) Respiração aeróbicab) Respiração anaeróbica,c) Respiração cutânead)Respiração pulmonar,Resposta correta: b)
-tema:Quimica e Biologia,7.Qual é o processo de separação de uma mistura por meio da evaporação e condensação dos componentes?,a) Destilação,b)Filtração,c)Decantação,d)Cristalização,Resposta correta: a).
-tema:Quimica e Biologia,8.Qual cientista desenvolveu a tabela periódica dos elementos?,a) Dmitri Mendeleev,b)Marie Curie,c)Ernest Rutherford,d)Niels Bohr,Resposta correta: a)
-tema:Quimica e Biologia,9. Quem é conhecido como o "pai da genética" e desenvolveu as leis da hereditariedade?,a) Thomas Morgan,b) Rosalind Franklin,c) Gregor Mendel,d) Barbara McClintock,Resposta correta: c). 
-tema:Quimica e Biologia,10.Quem foi o cientista que descobriu a estrutura do DNA, conhecida como a dupla hélice?,a)James Watson,b)Francis Crick,c)Rosalind Franklin,d)Linus Pauling,Resposta correta:b).
+tema:Quimica e Biologia,Qual é o elemento químico mais eletronegativo?,a)Hidrogênio (H),b)Oxigênio (O),c)Flúor (F),d) Cloro (Cl),c
+tema:Quimica e Biologia,Qual é a função principal dos catalisadores em reações químicas?,a) Aumentar a temperatura da reação,b) Aumentar a pressão da reação,c) Aumentar a velocidade da reação,d) Alterar o equilíbrio químico da reação,c
+tema:Quimica e Biologia,Qual é o nome dado ao processo de divisão celular que resulta em células haploides?,a)Mitose,b)Meiose,c) Replicação,d) Diferenciação,b
+tema:Quimica e Biologia,Qual é o processo de formação de esporos em fungos?,a)Fotossíntese,b)Respiração celular,c)Fragmentação,d)Esporulação,d
+tema:Quimica e Biologia,Qual é o componente principal das membranas celulares?,a) Carboidratos,b) Ácidos nucleicos,c) Lipídios,d) Proteínas,c
+tema:Quimica e Biologia,Qual é o tipo de respiração que ocorre na ausência de oxigênio?,a) Respiração aeróbicab) Respiração anaeróbica,c) Respiração cutânead)Respiração pulmonar,b
+tema:Quimica e Biologia,Qual é o processo de separação de uma mistura por meio da evaporação e condensação dos componentes?,a) Destilação,b)Filtração,c)Decantação,d)Cristalização,a
+tema:Quimica e Biologia,Qual cientista desenvolveu a tabela periódica dos elementos?,a) Dmitri Mendeleev,b)Marie Curie,c)Ernest Rutherford,d)Niels Bohr,a
+tema:Quimica e Biologia,Quem é conhecido como o "pai da genética" e desenvolveu as leis da hereditariedade?,a) Thomas Morgan,b) Rosalind Franklin,c) Gregor Mendel,d) Barbara McClintock,c
+tema:Quimica e Biologia,Quem foi o cientista que descobriu a estrutura do DNA, conhecida como a dupla hélice?,a)James Watson,b)Francis Crick,c)Rosalind Franklin,d)Linus Pauling,b

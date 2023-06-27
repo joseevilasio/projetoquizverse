@@ -1,14 +1,10 @@
-Matemática e Física,1-Qual é o valor do ângulo reto?, a) 60°, b) 90°, c) 120°, d) 180°, resposta correta: b).
-Matemática e Física,2-Qual é o valor da velocidade da luz no vácuo?, a) 300.000 km/h, b) 300.000 km/s, c) 3.000 km/h, d) 3.000 km/s, Resposta correta: b).
-Matemática e Física,3- Qual é a aceleração média de um carro que passa de 0 a 100 km/h em 10 segundos?, a) 2 m/s^2, b) 5 m/s^2, c) 10 m/s^2, d) 20 m/s^2, resposta correta: c).
-Matemática e Física,4-Qual é o valor do número irracional π (pi) aproximado para duas casas decimais?, a) 3.14, b) 3.16, c) 3.18, d) 3.20, resposta correta: a).
-Matemática e Física,5-Qual é a unidade correta para medir a velocidade?, a) Metro por segundo (m/s), b) Kilograma (kg), c) Pascal (Pa), d) Metro cúbico (m³), Resposta correta: a).
-Matemática e Física,6-Qual é a lei da física que descreve o deslocamento angular de um objeto em rotação?, a) Lei de Ohm, b) Lei de Coulomb, c) Lei de Ampère, d) Lei de Faraday, Resposta correta: d).
-Matemática e Física,7-Qual é a unidade correta para medir a frequência?, a) Metro (m), b) Hertz (Hz), c) Pascal (Pa), d) Coulomb (C), Resposta correta: b).
-Matemática e Física,8-Qual é a lei da física que descreve a força entre duas cargas elétricas?, a) Lei de Coulomb, b) Lei de Ohm, c) Lei de Newton, d) Lei de Ampère, Resposta correta: a).
-Matemática e Física,9-Qual é a unidade correta para medir a resistência elétrica?, a) Ampère (A), b) Volt (V), c) Ohm (Ω), d) Watt (W), Resposta correta: c).
-Matemática e Física,10-Qual é a unidade correta para medir a força?, a) Joule (J), b) Watt (W), c) Newton (N), d) Pascal (Pa), Resposta correta: c).
-
-
-
-
+Matemática e Física,Qual é o valor do ângulo reto?, a) 60°, b) 90°, c) 120°, d) 180°,b
+Matemática e Física,Qual é o valor da velocidade da luz no vácuo?, a) 300.000 km/h, b) 300.000 km/s, c) 3.000 km/h, d) 3.000 km/s,b
+Matemática e Física,Qual é a aceleração média de um carro que passa de 0 a 100 km/h em 10 segundos?, a) 2 m/s^2, b) 5 m/s^2, c) 10 m/s^2, d) 20 m/s^2,c
+Matemática e Física,Qual é o valor do número irracional π (pi) aproximado para duas casas decimais?, a) 3.14, b) 3.16, c) 3.18, d) 3.20,a
+Matemática e Física,Qual é a unidade correta para medir a velocidade?, a) Metro por segundo (m/s), b) Kilograma (kg), c) Pascal (Pa), d) Metro cúbico (m³),a
+Matemática e Física,Qual é a lei da física que descreve o deslocamento angular de um objeto em rotação?, a) Lei de Ohm, b) Lei de Coulomb, c) Lei de Ampère, d) Lei de Faraday,d
+Matemática e Física,Qual é a unidade correta para medir a frequência?, a) Metro (m), b) Hertz (Hz), c) Pascal (Pa), d) Coulomb (C),b
+Matemática e Física,Qual é a lei da física que descreve a força entre duas cargas elétricas?, a) Lei de Coulomb, b) Lei de Ohm, c) Lei de Newton, d) Lei de Ampère,a
+Matemática e Física,Qual é a unidade correta para medir a resistência elétrica?, a) Ampère (A), b) Volt (V), c) Ohm (Ω), d) Watt (W),c
+Matemática e Física,Qual é a unidade correta para medir a força?, a) Joule (J), b) Watt (W), c) Newton (N), d) Pascal (Pa),c
