@@ -22,8 +22,8 @@ int main() {
     int opcaoTema, opcaoDificuldade; // variavel utilizada para definir tema e dificuldade
     string press;
 
-    //Exibir Tela de Boas Vindas, resulta em um return 0 (entrar) ou 1 (sair)
-    //inserir funcao
+    //Exibir Tela de Boas Vindas, resulta em um return A (entrar), B (sair) ou default (Erro).
+    opcao = telaInicial();
 
     //estruturar um if quando a funcao Boas Vindas tiver pronta
     while (opcao != 4) {
@@ -129,7 +129,8 @@ int main() {
             break;
 
             case 4: //Sair            
-            //inserir tela de despedida            
+            //inserir tela de despedida  
+            //adicionar funcao saida          
             cout << corLetra("vermelho") << corFundo("branco") << "Tela Despedida" << resetCor() << endl;
             break;
             exit(0);
