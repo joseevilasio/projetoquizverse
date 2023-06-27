@@ -5,6 +5,8 @@
 #include <vector>
 #include "function_utils.cpp"
 #include "function_login.cpp"
+#include "function_database.cpp"
+
 #ifndef FUNCTION_GAME_H
 #define FUNCTION_GAME_H
 
@@ -173,6 +175,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             // controle de termino
             if (contador == 11){
                 return pontosUser;
+                modificarPontos(userEmail, pontosUser);
                 break;
             } 
 
@@ -211,6 +214,29 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
         cout << "Falha ao abrir o arquivo." << endl;
     }
 
+    return 1;
+}
+
+int resetPontos(string userEmail){
+    //Recebe o argumento de email e após a confirmação apaga a conta
+    int opcao;
+    int pontosUser = 0;
+
+    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RESET DE PONTOS - ¦ - |" << resetCor() << endl;
+    cout << corLetra("vermelho") << "Tem certeza que deseja fazer o reset de pontos ?" << resetCor() << endl;
+    cout << corLetra("vermelho") << "1 - SIM!" << resetCor() << endl;
+    cout << corLetra("azul") << "2 - Não, voltar para menu anterior." << resetCor() << endl;
+    cin >> opcao;
+
+    if (opcao == 1){
+        modificarPontos(userEmail, pontosUser);
+        limparTela();        
+        cout << corLetra("vermelho") << "Reset de pontos realizado com sucesso." << resetCor() << endl;
+        cout << "";
+        cout << "Pressione qualquer tecla para voltar ao menu." << endl;
+        //adicionar um getch
+        return 0;
+    }
     return 1;
 }
 

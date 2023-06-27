@@ -91,7 +91,7 @@ string buscarLinhadeArquivo(string userEmail){
 
 void modificarPontos(string userEmail, int pontosUser) {
 
-    string nomeArquivo = "database.txt";
+    string nomeArquivo = "assets/database.txt";
 
     ifstream arquivoEntrada(nomeArquivo);
     ofstream arquivoTemporario("temp.txt");

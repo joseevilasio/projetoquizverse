@@ -81,7 +81,9 @@ int main() {
                         ranking();      
                         break;
 
-                        case 3: // Reset de Pontos                        
+                        case 3: // Reset de Pontos 
+                        limparTela();
+                        resetPontos(userEmail);
                         break;
 
                         case 4: // Regras                        
