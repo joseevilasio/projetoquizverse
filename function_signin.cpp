@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-//#include <conio.h>
+#include <conio.h>
 #include <locale.h>
 #include <fstream>
 #include <unistd.h>
 #include <sstream>
 #include <vector>
-#include <termios.h>
+//#include <termios.h>
 #include "function_utils.cpp"
 #ifndef FUNCTION_SIGNIN_H
 #define FUNCTION_SIGNIN_H
