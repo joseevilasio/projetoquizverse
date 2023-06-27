@@ -1,0 +1,15 @@
+Química e Biologia,1-Qual é a fórmula química correta para o peróxido de hidrogênio (água oxigenada)?, a) H2O, b) H2O2, c) HOH, d) H2SO4, Resposta correta: b) H2O2.
+Química e Biologia,2-A Teoria do Flogisto (ou do flogístico) foi desenvolvida pelo químico e médico alemão:, a) Georg Ernst Stahl, b) Antoine Lavoisier, c) Dmitri Mendeleiev, d) Marie Curie, Resposta correta: a) Georg Ernst Stahl.
+Química e Biologia,3-Qual é o órgão responsável pela produção da insulina no corpo humano?, a) Fígado, b) Pâncreas, c) Rim, d) Baço, Resposta correta: b) Pâncreas.
+Química e Biologia,4-Qual é o órgão responsável pela filtragem do sangue e produção de urina?, a) Fígado, b) Pâncreas, c) Rim, d) Baço, Resposta correta: c) Rim.
+Quimica e Biologia,5-Qual é a unidade básica da estrutura dos seres vivos?, a) Célula, b) Tecido, c) Órgão, d) Sistema, Resposta correta: a) Célula.
+Química e Biologia,6- Qual é o pH neutro na escala de pH?, a) 1, b) 5, c) 7, d) 14, Resposta correta: c) 7.
+Química e Biologia,7-Qual é o nome dado à reação química em que ocorre a queima de um combustível na presença de oxigênio?, a) Combustão, b) Oxidação, c) Redução, d) Decomposição, Resposta correta: a) Combustão.
+Química e Biologia,8-Qual é o símbolo químico do elemento oxigênio?, a) O, b) Ox, c) Oxg, d) Oxgênio, Resposta correta: a) O.
+Química e Biologia,9-Qual é a fórmula química da água?, a) H2O2, b) H2O, c) H2O3, d) H2O4, Resposta correta: b) H2O.
+Química e Biologia,10-Qual é o símbolo químico do Ferro?, a) Cu, b) Fe, c) Zn, d) Co, Resposta correta: b) Fe.
+
+
+
+
+
