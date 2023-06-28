@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <algorithm>
 #include "function_utils.cpp"
 #include "function_login.cpp"
 #include "function_database.cpp"
@@ -11,6 +12,16 @@
 #define FUNCTION_GAME_H
 
 using namespace std;
+
+struct Pontuacao {
+    // Estrutura utilizando na funcao ranking
+        string nome;
+        int pontos;
+    };
+
+bool compararPontos(const Pontuacao& pontuacao1, const Pontuacao& pontuacao2) {
+    // Comparar pontos
+    return pontuacao1.pontos > pontuacao2.pontos;}
 
 int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
     // Abre menu de temas e dificuldades e retorna string com as informações    
@@ -81,14 +92,11 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
 }
 
 void ranking(){
-    // ranking    
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
-    int opcao;
-
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Ranking - QuizVerse - ¦ - |" << resetCor() << endl;
-    cout << corLetra("ciano") << "------------------------------------" << endl;     
-    cout << "| # | Nome              | Pontos   |" << endl;
-    cout << "------------------------------------" << endl;       
+    // Acessa banco de dados e retorna lista de pontuacao
+    string nomeArquivo = "assets/database.txt"; // Path
+    ifstream arquivo(nomeArquivo);  // Abre o arquivo para leitura
+    vector<Pontuacao> pontuacoes; //Recebe as structs
+    int contador = 1;
     
     if (arquivo.is_open()){
         string linha;       
@@ -98,28 +106,36 @@ void ranking(){
             string dado;
             vector<string> dados;
             
-            
             while (getline(iss, dado, ',')) {
                 dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
             }
 
-            size_t tamanhoString = dados[0].size();
+            pontuacoes.push_back({dados[0], stoi(dados[5])});
+        }
 
-            cout << "1   " << dados[0];
+        sort(pontuacoes.begin(), pontuacoes.end(), compararPontos);
+
+        cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Ranking - QuizVerse - ¦ - |" << resetCor() << endl;
+        cout << corLetra("ciano") << "------------------------------------" << endl;     
+        cout << "| # | Nome              | Pontos   |" << endl;
+        cout << "------------------------------------" << endl;
+
+        for (const auto& pontuacao : pontuacoes) {                                    
+            cout << " " << contador << "º  " << pontuacao.nome;
+            size_t tamanhoString = pontuacao.nome.size();
             cout << calcularEspaco(tamanhoString);
-            cout << dados[5] << endl;            
+            cout << " " << pontuacao.pontos << endl;
+            contador ++;            
         }
 
         cout << "------------------------------------" << resetCor() << endl;
         cout << "" << endl;
-        cout << "1 > Voltar ao menu" << endl;
-        cout << ">>> ";
-        cin >> opcao; 
+       
+        // Adicionar funcao de pressione 
 
         arquivo.close();
 
-    } else {
-        cout << "Falha ao abrir o arquivo." << endl;
+    } else { cout << "Falha ao abrir o arquivo." << endl;
     }
 }
 
@@ -155,7 +171,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
 
     int pontosUser = 0; //Pontos de inicio da partida
     int pontosJogo = 5; //Pontos para cada pergunta correta
-    int contador = 1;
+    int contador = 0;
     
     if (arquivo.is_open()){
         string linha;        
@@ -169,17 +185,9 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
                 dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
             }
 
+            contador++;
             char respostaUser;
             char respostaCorreta = 'a';
-            contador++;
-
-            // controle de fim de while da leitura de arquivo
-            if (contador == 11){
-                int _pontosUser = consultarPontos(userEmail) + pontosUser;                
-                modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
-                return pontosUser;
-                break;
-            } 
 
             cout << corLetra("azul") << corFundo("branco") << "QuizVerse" << resetCor() << endl;
             cout << corLetra("ciano");
@@ -194,7 +202,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             cout << dados[4] << endl; //Resposta C
             cout << dados[5] << endl; //Resposta D
             cout << ">>> ";
-            cin >> respostaUser;            
+            cin >> respostaUser;
 
             if(respostaUser == respostaCorreta){
                 cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
@@ -207,7 +215,15 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
                 cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
                 usleep(1000000);
                 limparTela();
-                }                      
+                }
+
+            // controle de fim de while da leitura de arquivo
+            if (contador == 10){
+                int _pontosUser = consultarPontos(userEmail) + pontosUser;                
+                modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
+                return pontosUser;
+                break;
+            }                       
         }
         arquivo.close();
     } else {
