@@ -163,4 +163,29 @@ void telaSaida(){
     cin >> opcao;
 }
 
+int tempo(){
+    //A função imprime na tela o tempo
+    int segundos = 4;
+    int segundosFinais = segundos / 2;
+    
+    for (int cont = segundos; cont > -1; cont--){
+
+        usleep(1000000);        
+        if (cont > segundosFinais) {
+            cout << corLetra("branco") << "00:" << cont << "\r";            
+            cout.flush();
+            
+        } else {
+            cout << corLetra("vermelho") << "00:" << cont << "\r";            
+            cout.flush();
+            }                    
+                     
+        cout << "\033[2K"; // Limpa a linha atual
+    }
+        
+    cout << resetCor;
+
+    return 0; 
+}
+
 #endif

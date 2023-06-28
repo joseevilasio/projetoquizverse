@@ -19,6 +19,12 @@ struct Pontuacao {
         int pontos;
     };
 
+struct Perguntas {
+    // Estrutura utilizando na funcao jogar
+        string pergunta;
+        char respostaCorreta;
+    };
+
 bool compararPontos(const Pontuacao& pontuacao1, const Pontuacao& pontuacao2) {
     // Comparar pontos
     return pontuacao1.pontos > pontuacao2.pontos;}
@@ -143,6 +149,8 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
     // Recebe as informações de escolha de tema e dificuldade, email e inicia leitura de arquivo de perguntas
     string path;
 
+    Perguntas questao;
+
     switch (opcaoTema) {
         case 1: // 1 > Tema Geografia e Cultura
             if (opcaoDificuldade == 1){path = "assets/1_geografia_1_faceis.txt";}
@@ -185,9 +193,13 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
                 dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
             }
 
+            questao.respostaCorreta = dados[6][0];
+
             contador++;
             char respostaUser;
-            char respostaCorreta = 'a';
+            //char respostaCorreta = 'a';
+
+            limparTela();
 
             cout << corLetra("azul") << corFundo("branco") << "QuizVerse" << resetCor() << endl;
             cout << corLetra("ciano");
@@ -201,12 +213,15 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             cout << dados[3] << endl; //Resposta B
             cout << dados[4] << endl; //Resposta C
             cout << dados[5] << endl; //Resposta D
+            cout << "" << endl;
+            cout << "Ao fim da contagem, insira a letra que corresponde com a resposta." << endl;
+            //tempo();
             cout << ">>> ";
             cin >> respostaUser;
 
-            if(respostaUser == respostaCorreta){
+            if(respostaUser == questao.respostaCorreta){
                 cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
-                cout << corLetra("magenta") << "Boa! +10" << resetCor() << endl;
+                cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
                 pontosUser += pontosJogo;
                 usleep(1000000);
                 limparTela();
