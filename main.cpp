@@ -55,9 +55,7 @@ int main() {
                     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Jogo - QuizVerse - ¦ - |" << resetCor() << endl;
                     cout << corLetra("ciano") << corFundo("branco");
                     consultarNome(userEmail);
-                    cout  << " - Total de ";
-                    consultarPontos(userEmail);
-                    cout << " pontos." << resetCor() << endl;                
+                    cout  << " - Total de " << consultarPontos(userEmail) << " pontos." << resetCor() << endl;
                     cout << "" << endl;
                     cout << "1 > Jogar" << endl;
                     cout << "2 > Ranking" << endl;
@@ -73,8 +71,8 @@ int main() {
                     switch (opcaoMenuJogo){
 
                         case 1: // Jogar
-                        if (escolherTema(opcaoTema, opcaoDificuldade) == 0){
-                            cout << "iniciar jogo";
+                        if (escolherTema(opcaoTema, opcaoDificuldade) == 0){                            
+                            jogar(opcaoTema, opcaoDificuldade, userEmail);
                         }                        
                         break;
 
@@ -83,7 +81,9 @@ int main() {
                         ranking();      
                         break;
 
-                        case 3: // Reset de Pontos                        
+                        case 3: // Reset de Pontos 
+                        limparTela();
+                        resetPontos(userEmail);
                         break;
 
                         case 4: // Regras                        

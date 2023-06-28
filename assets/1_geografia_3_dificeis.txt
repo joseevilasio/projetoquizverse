@@ -1,0 +1,10 @@
+Geografia e cultura geral,Qual é o maior festival de cinema do mundo?, a) Festival de Cannes, b) Festival de Berlim, c) Festival de Veneza, d) Festival de Sundance,a
+Geografia e cultura geral,Qual é o país de origem do tango?, a) Brasil, b) Espanha, c) Argentina, d) Itália,c
+Geografia e cultura geral,Quem foi o pintor do famoso quadro "A Última Ceia"?, a) Pablo Picasso, b) Leonardo da Vinci, c) Michelangelo, d) Rembrandt,b
+Geografia e cultura geral,Qual é o país conhecido por sua tradição na arte do origami?, a) China, b) Japão, c) Coreia do Sul, d) Tailândia,b
+Geografia e cultura geral,Quem é o autor da peça teatral "Romeu e Julieta"?, a) William Shakespeare, b) Tennessee Williams, c) Oscar Wilde, d) Anton Chekhov,a
+Geografia e cultura geral,Qual é a dança tradicional da Espanha?, a) Salsa, b) Flamenco, c) Samba, d) Ballet,b
+Geografia e cultura geral,Qual é o nome do personagem principal da série de livros "As Crônicas de Nárnia"?, a) Frodo Bolseiro, b) Aslan, c) Harry Potter, d) Asa Noturna,b
+Geografia e cultura geral,Qual é o nome da atriz que interpreta a personagem Daenerys Targaryen em "Game of Thrones"?, a) Lena Headey, b) Emilia Clarke, c) Maisie Williams, d) Sophie Turner,b
+Geografia e cultura geral,Qual é o título do primeiro filme da franquia "Velozes e Furiosos"?, a) Velozes e Furiosos 5: Operação Rio, b) Velozes e Furiosos: Desafio em Tóquio, c) Velozes e Furiosos, d) Velozes e Furiosos: Hobbs & Shaw,c
+Geografia e cultura geral,Qual é o nome do vilão principal no filme "O Rei Leão"?, a) Scar, b) Jafar, c) Ursula, d) Hades,a
