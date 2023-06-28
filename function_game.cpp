@@ -131,7 +131,7 @@ void ranking(){
         cout << "------------------------------------" << resetCor() << endl;
         cout << "" << endl;
        
-        // Adicionar funcao de pressione 
+        pressione(); 
 
         arquivo.close();
 
@@ -249,8 +249,7 @@ int resetPontos(string userEmail){
         limparTela();        
         cout << corLetra("vermelho") << "Reset de pontos realizado com sucesso." << resetCor() << endl;
         cout << "";
-        cout << "Pressione qualquer tecla para voltar ao menu." << endl;
-        //adicionar um getch
+        pressione();
         return 0;
     }
     return 1;

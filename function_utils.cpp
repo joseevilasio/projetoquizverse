@@ -18,6 +18,18 @@ void limparTela(){
     #endif
 }
 
+void pressione() {
+    //Verifica qual o sistema e captura
+    cout << "Pressione enter para continuar ..." << endl;    
+    #ifdef _WIN32
+        getch();
+    #elif defined __unix__
+        getchar();
+    #endif
+
+    limparTela();
+}
+
 void load(){
     //A função imprime na tela loading de 0% até 100%    
     
@@ -130,11 +142,7 @@ void telaInicial(){
     cout << "QuizVerse" << endl;
     cout << "" << endl;
     cout << "" << endl;
-    cout << "Pressione qualquer tecla para continuar..." ;
-    getch();
-    limparTela();
-
-
+    pressione();
 }
 
 //Tela de Saida

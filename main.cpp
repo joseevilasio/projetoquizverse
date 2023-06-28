@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include <conio.h>
 #include <locale.h>
 #include "function_signin.cpp"
 #include "function_utils.cpp"
@@ -136,9 +135,7 @@ int main() {
             break;
 
             default: cout << "" << opcao << " é uma entrada incorreta! - Tente novamente." << endl; 
-            cout << "Pressione enter para voltar...";
-            getch();
-            limparTela();
+            pressione();
             break;
         }
     }

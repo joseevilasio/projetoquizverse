@@ -1,13 +1,19 @@
+#ifdef _WIN32
+    // Inclua as bibliotecas específicas do Windows aqui
+    #include <canio.h>   
+#elif __linux__
+    // Inclua as bibliotecas específicas do Linux aqui
+    #include <termios.h>    
+
+#endif
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include <conio.h>
 #include <locale.h>
 #include <fstream>
 #include <unistd.h>
 #include <sstream>
 #include <vector>
-//#include <termios.h>
 #include "function_utils.cpp"
 #ifndef FUNCTION_SIGNIN_H
 #define FUNCTION_SIGNIN_H
