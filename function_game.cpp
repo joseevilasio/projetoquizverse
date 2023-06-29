@@ -222,7 +222,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
                 cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
                 cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
                 pontosUser += pontosJogo;
-                usleep(1000000);
+                sleep(1000);
                 limparTela();
                 
             } //else if (fim == 0){
@@ -230,7 +230,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             //}
             else{ 
                 cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
-                usleep(1000000);
+                sleep(1000);
                 limparTela();
                 }
 

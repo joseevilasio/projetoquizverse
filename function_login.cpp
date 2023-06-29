@@ -79,7 +79,7 @@ bool recuperacaoPassword(){
                         cout << corLetra("vermelho") << corFundo("branco") << "Atenção! Sua palavra passe:" << endl;
                         cout << corLetra("verde") << corFundo("branco") << dados[2] << resetCor() << endl;
                         cout << "" << endl;                    
-                        usleep(10000000);
+                        pressione();
                         return true;
                         break;
 
