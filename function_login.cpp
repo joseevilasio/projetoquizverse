@@ -147,7 +147,7 @@ bool login(string &userEmail){
 int eliminarConta(string userEmail){
     //Recebe o argumento de email e após a confirmação apaga a conta
     int opcao;
-    string nomeArquivo = "assets/database.txt";
+    string nomeArquivo = path("database.txt");
     int linhaParaEliminar = consultarLinhadeArquivo(userEmail);
 
     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - ELIMINAR CONTA - ¦ - |" << resetCor() << endl;
@@ -167,7 +167,7 @@ int eliminarConta(string userEmail){
 
 int consultarPontos(string userEmail){
     //recebe email e exibe os pontos registados
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;
@@ -196,7 +196,7 @@ int consultarPontos(string userEmail){
 
 void consultarNome(string userEmail){
     //recebe email e exibe o nome cadastrado
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;

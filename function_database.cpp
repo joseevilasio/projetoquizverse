@@ -26,8 +26,10 @@ string path(string nomeArquivo) {
 }
 
 void eliminarLinhaArquivo(const string& nomeArquivo, int linhaParaEliminar) {
+
+    string _nomeArquivo = "assets/database.txt";
     ifstream arquivoEntrada(nomeArquivo);
-    ofstream arquivoTemporario(path("temp.txt"));
+    ofstream arquivoTemporario("temp.txt");
 
     string linha;
     int numeroLinha = 1;
@@ -42,8 +44,8 @@ void eliminarLinhaArquivo(const string& nomeArquivo, int linhaParaEliminar) {
     arquivoEntrada.close();
     arquivoTemporario.close();
 
-    remove(nomeArquivo.c_str());
-    rename(path("temp.txt"), nomeArquivo.c_str());
+    remove(_nomeArquivo.c_str());
+    rename("temp.txt", _nomeArquivo.c_str());
 }
 
 int consultarLinhadeArquivo(string userEmail){
@@ -107,9 +109,9 @@ string buscarLinhadeArquivo(string userEmail){
 
 void modificarPontos(string userEmail, int pontosUser) {
     
-
+    string _nomeArquivo = "assets/database.txt";
     ifstream arquivoEntrada(path("database.txt"));
-    ofstream arquivoTemporario(path("temp.txt"));
+    ofstream arquivoTemporario("temp.txt");
 
     string linha;
     int numeroLinha = 1;
@@ -136,8 +138,8 @@ void modificarPontos(string userEmail, int pontosUser) {
     arquivoEntrada.close();
     arquivoTemporario.close();
 
-    remove(nomeArquivo.c_str());
-    rename("temp.txt", nomeArquivo.c_str());
+    remove(_nomeArquivo.c_str());
+    rename("temp.txt", _nomeArquivo.c_str());
 }
 
 

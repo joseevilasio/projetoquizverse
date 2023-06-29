@@ -7,6 +7,7 @@
 #include <sstream>
 #include <vector>
 #include "function_utils.cpp"
+#include "function_database.cpp"
 #ifndef FUNCTION_SIGNIN_H
 #define FUNCTION_SIGNIN_H
 
@@ -23,7 +24,7 @@ using namespace std;
 
 bool validarEmail(string email){
     //Recebe um argumento com string e valida se o email já existe no banco de dados
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;
@@ -170,17 +171,18 @@ int signin(){
     cout << "" << endl;
 
     //recurso visual de loading e apresentar que cadastro foi realizado
-    limparTela();
-    load();
-    cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
+    
     //pressione();
 
     //abrir o arquivo de database e salvar as informações coletadas
-    ofstream arquivo("assets/database.txt", ios::app);
+    ofstream arquivo(path("database.txt"), ios::app);
 
     if (arquivo.is_open()) {
         arquivo << "" << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password << "," << usuario.pergunta << "," << usuario.resposta << "," << usuario.pontos << endl;
         arquivo.close();
+        limparTela();
+        load();
+        cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
     } else {
         cout << "Falha na gravação do arquivo." << endl;
     }
