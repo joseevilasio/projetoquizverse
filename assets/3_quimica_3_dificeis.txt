@@ -3,7 +3,7 @@ tema:Quimica e Biologia,Qual é a função principal dos catalisadores em reaç�
 tema:Quimica e Biologia,Qual é o nome dado ao processo de divisão celular que resulta em células haploides?,a)Mitose,b)Meiose,c) Replicação,d) Diferenciação,b
 tema:Quimica e Biologia,Qual é o processo de formação de esporos em fungos?,a)Fotossíntese,b)Respiração celular,c)Fragmentação,d)Esporulação,d
 tema:Quimica e Biologia,Qual é o componente principal das membranas celulares?,a) Carboidratos,b) Ácidos nucleicos,c) Lipídios,d) Proteínas,c
-tema:Quimica e Biologia,Qual é o tipo de respiração que ocorre na ausência de oxigênio?,a) Respiração aeróbicab) Respiração anaeróbica,c) Respiração cutânead)Respiração pulmonar,b
+tema:Quimica e Biologia,Qual é o tipo de respiração que ocorre na ausência de oxigênio?,a) Respiração aeróbica,b) Respiração anaeróbica,c) Respiração cutânea,d)Respiração pulmonar,b
 tema:Quimica e Biologia,Qual é o processo de separação de uma mistura por meio da evaporação e condensação dos componentes?,a) Destilação,b)Filtração,c)Decantação,d)Cristalização,a
 tema:Quimica e Biologia,Qual cientista desenvolveu a tabela periódica dos elementos?,a) Dmitri Mendeleev,b)Marie Curie,c)Ernest Rutherford,d)Niels Bohr,a
 tema:Quimica e Biologia,Quem é conhecido como o "pai da genética" e desenvolveu as leis da hereditariedade?,a) Thomas Morgan,b) Rosalind Franklin,c) Gregor Mendel,d) Barbara McClintock,c

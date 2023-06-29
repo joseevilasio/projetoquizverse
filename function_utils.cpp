@@ -28,9 +28,9 @@ void limparTela(){
     #endif
 }
 
-void pressione() {
+void pressione(string texto) {
     //Verifica qual o sistema e captura
-    cout << "Pressione enter para continuar ..." << endl;    
+    cout << "Pressione enter para " << texto << " ..."; 
     #ifdef _WIN32
         getch();
     #elif defined __unix__
@@ -143,35 +143,7 @@ string calcularEspaco(int tamanho) {
     
 }
 
-//Tela Inicial
 
-void telaInicial(){
-
-    cout << "" << endl;
-    cout << "" << endl;
-    cout << "QuizVerse" << endl;
-    cout << "" << endl;
-    cout << "" << endl;
-    pressione();
-}
-
-//Tela de Saida
-
-void telaSaida(){
-
-    int opcao;
-
-    cout << "" << endl;
-    cout << "" << endl;
-    cout << "QuizVerse" << endl;
-    cout << "" << endl;
-    cout << "" << endl;
-    cout << "Projeto Realizado por: " << endl;
-    cout << "Hugo Magalhaes" << endl;
-    cout << "Jose Junior" << endl;
-    cout << "Patricia Correia" << endl;
-    cin >> opcao;
-}
 
 void tempo(){
     //A função imprime na tela o tempo
@@ -198,6 +170,53 @@ void tempo(){
     cout << resetCor();
 
     //return 0; 
+}
+
+void cabecalho(string texto){
+    size_t tamanhoString = texto.size();
+    cout << corLetra("azul") << corFundo("branco") << "                                               " << endl;
+    cout << corLetra("azul") << corFundo("branco") << calcularEspaco(tamanhoString);
+    cout << texto  << " QuizVerse                " << resetCor() << endl;
+    cout << corLetra("azul") << corFundo("branco") << "                                               "<< resetCor() << endl;
+}
+
+//Tela Inicial
+
+void telaInicial(){
+
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cabecalho("Bem-Vindo ao");
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    pressione("continuar");
+}
+
+//Tela de Saida
+
+void telaSaida(){
+
+
+    limparTela();
+    cout << "" << endl;
+    cout << "" << endl;
+    cabecalho("Um adeus do");
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "Projeto Realizado por: " << endl;
+    cout << "" << endl;
+    cout << "Hugo Magalhaes    |Github/ HugMagalhaes" << endl;
+    cout << "Jose Junior       |Github/ joseevilasio" << endl;
+    cout << "Patricia Correia  |Github/ tijgadixa"<< endl;
+    cout << "" << endl;
+    pressione("sair");
 }
 
 #endif

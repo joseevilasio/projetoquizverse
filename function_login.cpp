@@ -44,7 +44,7 @@ bool recuperacaoPassword(){
     string resposta, email;
     int quantErros = 0;
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RECUPERAÇÃO DE PALAVRA-PASSE - ¦ - |" << resetCor() << endl;
+    cabecalho("RECUPERAÇÃO DE PALAVRA-PASSE");
 
     cout << "Digite seu email: ";
     cin.ignore();    
@@ -79,7 +79,7 @@ bool recuperacaoPassword(){
                         cout << corLetra("vermelho") << corFundo("branco") << "Atenção! Sua palavra passe:" << endl;
                         cout << corLetra("verde") << corFundo("branco") << dados[2] << resetCor() << endl;
                         cout << "" << endl;                    
-                        pressione();
+                        pressione("continuar");
                         return true;
                         break;
 
@@ -103,7 +103,7 @@ bool login(string &userEmail){
     int quantErros = 0;
     string userPassword;
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - LOGIN - ¦ - |" << resetCor() << endl;    
+    cabecalho("LOGIN");    
 
     while(quantErros != 3){
 
@@ -128,7 +128,7 @@ bool login(string &userEmail){
                 limparTela();
                 cout << corLetra("vermelho") << endl;
                 cout << "Palavra-passe inválida ou Email inválido - Tente novamente [" << quantErros << "]" << resetCor() << endl;
-                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - LOGIN - ¦ - |" << resetCor() << endl;  
+                cabecalho("LOGIN");  
             }
     }
 

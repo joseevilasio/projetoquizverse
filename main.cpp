@@ -31,7 +31,7 @@ int main() {
 
         //load();
         
-        cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Inicial - QuizVerse - ¦ - |" << resetCor() << endl;
+        cabecalho("MENU Inicial");
         cout << "" << endl;
         cout << "1 > Login" << endl;
         cout << "2 > Signin" << endl;
@@ -51,8 +51,7 @@ int main() {
 
                     limparTela();
                     //load();
-                    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - MENU Jogo - QuizVerse - ¦ - |" << resetCor() << endl;
-                    cout << corLetra("ciano") << corFundo("branco");
+                    cabecalho("MENU Jogo");
                     consultarNome(userEmail);
                     cout  << " - Total de " << consultarPontos(userEmail) << " pontos." << resetCor() << endl;
                     cout << "" << endl;
@@ -135,7 +134,7 @@ int main() {
             break;
 
             default: cout << "" << opcao << " é uma entrada incorreta! - Tente novamente." << endl; 
-            pressione();
+            pressione("continuar");
             break;
         }
     }

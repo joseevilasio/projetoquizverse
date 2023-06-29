@@ -109,7 +109,7 @@ int signin(){
     int opcao; //variável utilizada na escolha da pergunta de recuperação da palavra passe
     bool condicao = true; //variavel de controle da condição de parada do while
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - REGISTO - ¦ - |" << resetCor() << endl;
+    cabecalho("REGISTO");
     cout << "" << endl;
 
     cout << "Digite seu nome: ";
@@ -127,7 +127,7 @@ int signin(){
         cout << " O email '" << usuario.email << "' já está cadastrado." << endl;
         cout << " Tente novamente ou faça login!" << endl;
         cout << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
-        pressione();
+        pressione("continuar");
         return 1;
     }
 
@@ -173,7 +173,7 @@ int signin(){
     limparTela();
     load();
     cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
-    pressione();
+    pressione("continuar");
 
     //abrir o arquivo de database e salvar as informações coletadas
     ofstream arquivo("assets/database.txt", ios::app);
