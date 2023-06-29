@@ -2,16 +2,6 @@
 #include <string>
 #include <stdlib.h>
 #include <locale.h>
-
-#ifdef _WIN32
-    // Inclua as bibliotecas específicas do Windows aqui
-    #include <canio.h>   
-#elif __linux__
-    // Inclua as bibliotecas específicas do Linux aqui
-    #include <termios.h>    
-
-#endif
-
 #include "function_signin.cpp"
 #include "function_utils.cpp"
 #include "function_login.cpp"

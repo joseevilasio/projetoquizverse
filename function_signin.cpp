@@ -6,6 +6,9 @@
 #include <unistd.h>
 #include <sstream>
 #include <vector>
+#include "function_utils.cpp"
+#ifndef FUNCTION_SIGNIN_H
+#define FUNCTION_SIGNIN_H
 
 #ifdef _WIN32
     // Inclua as bibliotecas específicas do Windows aqui
@@ -13,13 +16,7 @@
 #elif __linux__
     // Inclua as bibliotecas específicas do Linux aqui
     #include <termios.h>    
-
 #endif
-
-#include "function_utils.cpp"
-#ifndef FUNCTION_SIGNIN_H
-#define FUNCTION_SIGNIN_H
-
 
 using namespace std;
 

@@ -4,16 +4,6 @@
 #include <string>
 #include <vector>
 #include <ctype.h>
-
-#ifdef _WIN32
-    // Inclua as bibliotecas específicas do Windows aqui
-    #include <canio.h>   
-#elif __linux__
-    // Inclua as bibliotecas específicas do Linux aqui
-    #include <termios.h>    
-
-#endif
-
 #ifndef FUNCTION_UTILS_H
 #define FUNCTION_UTILS_H
 

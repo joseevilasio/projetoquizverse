@@ -4,18 +4,9 @@
 #include <sstream>
 #include <cstdio>
 #include <vector>
-
-#ifdef _WIN32
-    // Inclua as bibliotecas específicas do Windows aqui
-    #include <canio.h>   
-#elif __linux__
-    // Inclua as bibliotecas específicas do Linux aqui
-    #include <termios.h>    
-
-#endif
-
 #ifndef FUNCTION_DATABASE_H
 #define FUNCTION_DATABASE_H
+
 
 using namespace std;
 
