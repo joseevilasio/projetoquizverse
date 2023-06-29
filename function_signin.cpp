@@ -12,10 +12,10 @@
 
 #ifdef _WIN32
     // Inclua as bibliotecas específicas do Windows aqui
-#include <canio.h>   
+    #include <conio.h>   
 #elif __linux__
     // Inclua as bibliotecas específicas do Linux aqui
-#include <termios.h>    
+    #include <termios.h>    
 #endif
 
 using namespace std;
