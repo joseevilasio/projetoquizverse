@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <ctype.h>
+#include <stdio.h>
 #ifndef FUNCTION_UTILS_H
 #define FUNCTION_UTILS_H
 

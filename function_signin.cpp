@@ -172,8 +172,8 @@ int signin(){
     //recurso visual de loading e apresentar que cadastro foi realizado
     limparTela();
     load();
-    cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << endl;
-    usleep(500000);
+    cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
+    pressione();
 
     //abrir o arquivo de database e salvar as informações coletadas
     ofstream arquivo("assets/database.txt", ios::app);
