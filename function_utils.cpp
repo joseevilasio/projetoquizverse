@@ -4,6 +4,16 @@
 #include <string>
 #include <vector>
 #include <ctype.h>
+
+#ifdef _WIN32
+    // Inclua as bibliotecas específicas do Windows aqui
+    #include <canio.h>   
+#elif __linux__
+    // Inclua as bibliotecas específicas do Linux aqui
+    #include <termios.h>    
+
+#endif
+
 #ifndef FUNCTION_UTILS_H
 #define FUNCTION_UTILS_H
 
@@ -163,7 +173,7 @@ void telaSaida(){
     cin >> opcao;
 }
 
-int tempo(){
+void tempo(){
     //A função imprime na tela o tempo
     int segundos = 4;
     int segundosFinais = segundos / 2;
@@ -172,20 +182,22 @@ int tempo(){
 
         usleep(1000000);        
         if (cont > segundosFinais) {
-            cout << corLetra("branco") << "00:" << cont << "\r";            
+            cout << corLetra("branco") << "00:" << cont << " >>";            
             cout.flush();
+            cout << "\033[2K"; // Limpa a linha atual
+            cout << "\033[0G"; // Retorna para a coluna inicial
             
         } else {
-            cout << corLetra("vermelho") << "00:" << cont << "\r";            
+            cout << corLetra("vermelho") << "00:" << cont << " >>";            
             cout.flush();
-            }                    
-                     
-        cout << "\033[2K"; // Limpa a linha atual
+            cout << "\033[2K"; // Limpa a linha atual
+            cout << "\033[0G"; // Retorna para a coluna inicial
+            }
     }
         
     cout << resetCor;
 
-    return 0; 
+    //return 0; 
 }
 
 #endif

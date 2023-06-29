@@ -214,9 +214,8 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             cout << dados[4] << endl; //Resposta C
             cout << dados[5] << endl; //Resposta D
             cout << "" << endl;
-            cout << "Ao fim da contagem, insira a letra que corresponde com a resposta." << endl;
+            cout << "Insira a letra que corresponde com a resposta, antes que o tempo acabe!" << endl;
             //tempo();
-            cout << ">>> ";
             cin >> respostaUser;
 
             if(respostaUser == questao.respostaCorreta){
@@ -226,7 +225,10 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
                 usleep(1000000);
                 limparTela();
                 
-            } else{ 
+            } //else if (fim == 0){
+               // cout << "TEMPO ESGOTADO!";
+            //}
+            else{ 
                 cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
                 usleep(1000000);
                 limparTela();

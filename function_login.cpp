@@ -3,6 +3,16 @@
 #include "function_utils.cpp"
 #include "function_signin.cpp"
 #include "function_database.cpp"
+
+#ifdef _WIN32
+    // Inclua as bibliotecas específicas do Windows aqui
+    #include <canio.h>   
+#elif __linux__
+    // Inclua as bibliotecas específicas do Linux aqui
+    #include <termios.h>    
+
+#endif
+
 #ifndef FUNCTION_LOGIN_H
 #define FUNCTION_LOGIN_H
 
