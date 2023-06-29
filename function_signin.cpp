@@ -127,7 +127,7 @@ int signin(){
         cout << " O email '" << usuario.email << "' já está cadastrado." << endl;
         cout << " Tente novamente ou faça login!" << endl;
         cout << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
-        sleep(5);
+        pressione();
         return 1;
     }
 
