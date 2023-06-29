@@ -173,7 +173,7 @@ int signin(){
     limparTela();
     load();
     cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
-    pressione();
+    //pressione();
 
     //abrir o arquivo de database e salvar as informações coletadas
     ofstream arquivo("assets/database.txt", ios::app);

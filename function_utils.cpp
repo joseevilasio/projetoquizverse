@@ -46,7 +46,7 @@ void load(){
     for (int cont = 1; cont < 101; cont++){        
         cout.flush();
         cout << "" << cont << "% ";
-        sleep(100);
+        sleep(0.5);
         limparTela();      
         cout.flush(); 
     }
@@ -180,7 +180,7 @@ void tempo(){
     
     for (int cont = segundos; cont > -1; cont--){
 
-        sleep(1000);        
+        sleep(2);        
         if (cont > segundosFinais) {
             cout << corLetra("branco") << "00:" << cont << " >>";            
             cout.flush();

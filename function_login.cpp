@@ -10,7 +10,7 @@ using namespace std;
 
 bool validarPassword(string userEmail, string password){
     //Recebe um argumento com string e valida se o password é o que consta no banco de dados
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;
@@ -40,7 +40,7 @@ bool validarPassword(string userEmail, string password){
 
 bool recuperacaoPassword(){
     //Solicita email e exibe pergunta de recuperação e valida se o pergunta é o que consta no banco de dados
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     string resposta, email;
     int quantErros = 0;
 
@@ -115,10 +115,12 @@ bool login(string &userEmail){
 
         cout << "Palavra-passe: ";        
         cin.ignore();
-        userPassword = mascararPassword();;
-        cout << endl;       
+        userPassword = mascararPassword();
+        cout << endl;
 
-        if (validarPassword(userEmail, userPassword) == true){
+        bool validacao = validarPassword(userEmail, userPassword);
+
+        if ( validacao == true){
                 return true;
                 break;
                 
