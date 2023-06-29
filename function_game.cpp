@@ -136,8 +136,6 @@ void ranking(){
 
         cout << "------------------------------------" << resetCor() << endl;
         cout << "" << endl;
-       
-        pressione(); 
 
         arquivo.close();
 
