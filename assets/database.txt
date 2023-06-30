@@ -1,0 +1,9 @@
+Cristiano Ronaldo,cr7@mail.com,123456,Qual a cidade que você nasceu?,madeira,10
+Beyonce,bey@mail.com,123456,Qual a cidade que você nasceu?,houston,100
+Hugo Magalhaes,hugo@mail.com,123456,Qual é o nome do seu formador preferido?,Ricardo,50
+Maria,maria@mail.com,123456,Qual foi o nome do seu primeiro pet?,raposa,90
+Maria,mariajoao@mail.com,123456,Qual a cidade que você nasceu?,Porto,70
+Hugo,hugo@gmail.com,123456,Qual é o nome do seu formador preferido?,Ricardo,80
+Salvador,salvador@mail.com,123456,Qual a cidade que você nasceu?,salvador,0
+jhow,jhow@mail.com,123456,Qual a cidade que você nasceu?,porto,30
+Lucas,lucas@mail.com,123456,Qual é o nome do seu formador preferido?,ricardo,0

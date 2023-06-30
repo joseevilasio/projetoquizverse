@@ -99,7 +99,7 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
 
 void ranking(){
     // Acessa banco de dados e retorna lista de pontuacao
-    string nomeArquivo = "assets/database.txt"; // Path
+    string nomeArquivo = path("database.txt"); // Path
     ifstream arquivo(nomeArquivo);  // Abre o arquivo para leitura
     vector<Pontuacao> pontuacoes; //Recebe as structs
     int contador = 1;
@@ -147,35 +147,35 @@ void ranking(){
 
 int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
     // Recebe as informações de escolha de tema e dificuldade, email e inicia leitura de arquivo de perguntas
-    string path;
+    string _path;
 
     Perguntas questao;
 
     switch (opcaoTema) {
         case 1: // 1 > Tema Geografia e Cultura
-            if (opcaoDificuldade == 1){path = "assets/1_geografia_1_faceis.txt";}
-            else if (opcaoDificuldade == 2){path = "assets/1_geografia_2_normais.txt";}
-            else if (opcaoDificuldade == 3){path = "assets/1_geografia_3_dificeis.txt";}
+            if (opcaoDificuldade == 1){_path = path("1_geografia_1_faceis.txt");}
+            else if (opcaoDificuldade == 2){_path = path("1_geografia_2_normais.txt");}
+            else if (opcaoDificuldade == 3){_path = path("1_geografia_3_dificeis.txt");}
             break;
 
         case 2: // 2 > Tema Fisica e Matemática
-            if (opcaoDificuldade == 1){path = "assets/2_matematica_1_faceis.txt";}
-            else if (opcaoDificuldade == 2){path = "assets/2_matematica_2_normais.txt";}
-            else if (opcaoDificuldade == 3){path = "assets/2_matematica_3_dificeis.txt";}
+            if (opcaoDificuldade == 1){_path = path("2_matematica_1_faceis.txt");}
+            else if (opcaoDificuldade == 2){_path = path("2_matematica_2_normais.txt");}
+            else if (opcaoDificuldade == 3){_path = path("2_matematica_3_dificeis.txt");}
             break;
 
 
         case 3: // 3 > Tema Química e Biologia
-            if (opcaoDificuldade == 1){path = "assets/3_quimica_1_faceis.txt";}
-            else if (opcaoDificuldade == 2){path = "assets/3_quimica_2_normais.txt";}
-            else if (opcaoDificuldade == 3){path = "assets/3_quimica_3_dificeis.txt";}
+            if (opcaoDificuldade == 1){_path = path("3_quimica_1_faceis.txt");}
+            else if (opcaoDificuldade == 2){_path = path("3_quimica_2_normais.txt");}
+            else if (opcaoDificuldade == 3){_path = path("3_quimica_3_dificeis.txt");}
             break;
         
         default:
             break;
     }
 
-    ifstream arquivo(path); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas
+    ifstream arquivo(_path); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas
 
     int pontosUser = 0; //Pontos de inicio da partida
     int pontosJogo = 5; //Pontos para cada pergunta correta
@@ -221,7 +221,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
                 cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
                 cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
                 pontosUser += pontosJogo;
-                sleep(1000);
+                sleep(2);
                 limparTela();
                 
             } //else if (fim == 0){
@@ -229,7 +229,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             //}
             else{ 
                 cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
-                sleep(1000);
+                sleep(2);
                 limparTela();
                 }
 

@@ -4,15 +4,32 @@
 #include <sstream>
 #include <cstdio>
 #include <vector>
+#include <filesystem>
 #ifndef FUNCTION_DATABASE_H
 #define FUNCTION_DATABASE_H
 
 
 using namespace std;
+namespace fs = filesystem;
+
+string path(string nomeArquivo) {
+    //Recebe um nome de arquivo que está na pasta assets    
+
+    fs::path caminhoAbsoluto = fs::current_path() / "assets" / nomeArquivo;
+    fs::path caminhoRelativo = fs::relative(caminhoAbsoluto);
+
+    #ifdef _WIN32
+        return caminhoAbsoluto;
+    #elif defined __unix__
+        return caminhoRelativo;
+    #endif
+}
 
 void eliminarLinhaArquivo(const string& nomeArquivo, int linhaParaEliminar) {
+
+    string _nomeArquivo = "assets/database.txt";
     ifstream arquivoEntrada(nomeArquivo);
-    ofstream arquivoTemporario("assets/temp.txt");
+    ofstream arquivoTemporario("temp.txt");
 
     string linha;
     int numeroLinha = 1;
@@ -27,13 +44,13 @@ void eliminarLinhaArquivo(const string& nomeArquivo, int linhaParaEliminar) {
     arquivoEntrada.close();
     arquivoTemporario.close();
 
-    remove(nomeArquivo.c_str());
-    rename("assets/temp.txt", nomeArquivo.c_str());
+    remove(_nomeArquivo.c_str());
+    rename("temp.txt", _nomeArquivo.c_str());
 }
 
 int consultarLinhadeArquivo(string userEmail){
     //Recebe email e identifica em qual linha consta os dados e retornar o valor em int
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     int contarLinha = 0;
     
     if (arquivo.is_open()){
@@ -64,7 +81,7 @@ int consultarLinhadeArquivo(string userEmail){
 
 string buscarLinhadeArquivo(string userEmail){
     //Recebe email e identifica em qual linha consta os dados e retornar o valor em int
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura    
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura    
     
     if (arquivo.is_open()){
         string linha;
@@ -91,10 +108,9 @@ string buscarLinhadeArquivo(string userEmail){
 }
 
 void modificarPontos(string userEmail, int pontosUser) {
-
-    string nomeArquivo = "assets/database.txt";
-
-    ifstream arquivoEntrada(nomeArquivo);
+    
+    string _nomeArquivo = "assets/database.txt";
+    ifstream arquivoEntrada(path("database.txt"));
     ofstream arquivoTemporario("temp.txt");
 
     string linha;
@@ -122,8 +138,8 @@ void modificarPontos(string userEmail, int pontosUser) {
     arquivoEntrada.close();
     arquivoTemporario.close();
 
-    remove(nomeArquivo.c_str());
-    rename("temp.txt", nomeArquivo.c_str());
+    remove(_nomeArquivo.c_str());
+    rename("temp.txt", _nomeArquivo.c_str());
 }
 
 
