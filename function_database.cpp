@@ -19,7 +19,7 @@ string path(string nomeArquivo) {
     fs::path caminhoRelativo = fs::relative(caminhoAbsoluto);
 
     #ifdef _WIN32
-        return caminhoAbsoluto;
+        return caminhoAbsoluto.string();
     #elif defined __unix__
         return caminhoRelativo;
     #endif

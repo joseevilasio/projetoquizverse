@@ -270,5 +270,25 @@ int resetPontos(string userEmail){
     return 1;
 }
 
+void regras() {
+
+    cout << "Regras do jogo Quiz " << endl;
+    cout << corLetra("azul") << "---------------------------------------------------------------------------------------------" << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "1- Registar os dados do jogodar iniciando com login-signin;                                " << corLetra("azul") << "|"  << resetCor() << endl; 
+    cout << corLetra("azul") << "|"  << resetCor() << "2- Após a registo o jogador, escolher o tema do jogo e os três níveis de dificuldade;      " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "3- Inicio do Jogo:                                                                         " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Ao selecionar o tema e o nível de dificuldade, são apresentadas 10 perguntas;           " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Para cada pergunta terá 4 respostas com seu tempo e dentre elas uma é a certa;          " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Cada resposta certa o jogador ganha 5 pontos e a reposta errada não ganha nenhum ponto. " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "4- Fim do Jogo:                                                                            " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Ao responder todas as perguntas o sistema irá partilhar pontos adquiridos nessa rodada  " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "   mais pontos totais.                                                                     " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "5- Adicionais:                                                                             " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " -Os jogadores têm a opção de eliminar a sua conta e todos os dados associados a ela;      " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " -Os jogadores podem redefinir a sua pontuação para zero, começando do início;             " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " -Caso um jogador esqueça a sua password, fornecemos o mecanismo para recuperá-lo.         " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "---------------------------------------------------------------------------------------------" << resetCor() << endl;
+}
+
 
 #endif
