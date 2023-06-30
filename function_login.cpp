@@ -121,6 +121,7 @@ bool login(string &userEmail){
 
         cout << endl;
         cout << "Email: ";
+        cin.ignore();
         getline(cin, userEmail);
         cout << endl;
 
