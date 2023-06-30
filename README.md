@@ -14,7 +14,7 @@ e que comecem os jogos!
 
 ## Usabilidade
 
-
+![](./docs/quizverse_usage.gif)
 
 ## Situação
   Desenvolva uma aplicação que simule um Quiz. Este programa deve permitir aos
