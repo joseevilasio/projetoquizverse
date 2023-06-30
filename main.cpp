@@ -76,8 +76,10 @@ int main() {
                         break;
 
                         case 2: // Ranking
-                        limparTela();                        
-                        ranking();                              
+                        limparTela();
+                        ranking();
+                        cin.ignore();
+                        pressione();
                         break;
 
                         case 3: // Reset de Pontos 
