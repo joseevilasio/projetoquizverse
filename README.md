@@ -1,5 +1,20 @@
 # Projeto Quiz
-Projeto realizado em C++ utilizando conceitos da formação de Programação WEB
+Projeto realizado em C++ utilizando conceitos da formação de Programação WEB IEFP, utilizado 100% C++.
+Seguindo os requisitos solicitados no [projeto.](#situação)
+
+## QuizVerse
+  Aplicação é um Quiz sobre conhecimentos gerais com uma variedade de temas. A cada partida
+são 10 perguntas com múltiplas escolhas que valem 5 pontos a cada resposta correta. Temos
+ainda a escolha da dificuldade para aqueles jogadores mais avançados. Faça o seu cadastro
+e que comecem os jogos!
+
+## Pré requisitos
+- Permissão para ler, editar e gravar na pasta;
+- C++ 17.
+
+## Usabilidade
+
+
 
 ## Situação
   Desenvolva uma aplicação que simule um Quiz. Este programa deve permitir aos
