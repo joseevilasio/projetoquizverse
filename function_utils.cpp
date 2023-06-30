@@ -56,10 +56,8 @@ void load(){
         
         cout << "] " << (i + 1) * 5 << "%";
         cout.flush();
-        cout << "" << cont << "% ";
-        sleep(0.2);
-        limparTela();      
-        cout.flush(); 
+        sleep(0.999);
+        
     }
     
     cout << endl;

@@ -78,7 +78,7 @@ int main() {
                         limparTela();
                         ranking();
                         cin.ignore();
-                        pressione();
+                        pressione("continuar");
                         break;
 
                         case 3: // Reset de Pontos 
