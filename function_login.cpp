@@ -8,13 +8,22 @@
 
 using namespace std;
 
-bool validarPassword(string userEmail, string password){
+struct tipoUsuario {
+    // struct para armazenar os dados do usuário
+    string nomeCompleto, email, password, pergunta, resposta;
+    int pontos = 0;
+    };
+
+int validarPassword(string userEmail, string password){
     //Recebe um argumento com string e valida se o password é o que consta no banco de dados
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+       
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    vector<tipoUsuario> usuarios; //Recebe as structs
+    int contador = 0;
     
     if (arquivo.is_open()){
         string linha;
-
+        
         while (getline(arquivo, linha)) {
             istringstream iss(linha);
             string dado;
@@ -23,24 +32,27 @@ bool validarPassword(string userEmail, string password){
             while (getline(iss, dado, ',')) {
                 dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
             }
-                
-            if (userEmail == dados[1]){
-                if(password == dados[2]){
-                    return true;
+
+            usuarios.push_back({dados[0], dados[1], dados[2], dados[3], dados[4], stoi(dados[5])});
+
+            if (userEmail == usuarios[contador].email){  
+                if(password == usuarios[contador].password){
+                    return 0;
                     break;                
                 }  
             }
+            contador ++;
         }
         arquivo.close();
     } else {
         cout << "Falha ao abrir o arquivo." << endl;
     }
-    return false;
+    return 1;
 }
 
 bool recuperacaoPassword(){
     //Solicita email e exibe pergunta de recuperação e valida se o pergunta é o que consta no banco de dados
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     string resposta, email;
     int quantErros = 0;
 
@@ -109,19 +121,18 @@ bool login(string &userEmail){
 
         cout << endl;
         cout << "Email: ";
-        cin.ignore();
-        cin >> userEmail;
+        getline(cin, userEmail);
         cout << endl;
 
         cout << "Palavra-passe: ";        
-        cin.ignore();
-        userPassword = mascararPassword();;
-        cout << endl;       
+        userPassword = mascararPassword();
+        cout << endl;
 
-        if (validarPassword(userEmail, userPassword) == true){
-                return true;
-                break;
+        if ( validarPassword(userEmail, userPassword) == 0){
+            return true;
+            break;
                 
+
             } else{
                 //Se password for inválido, diminuir quantidades de tentativas.
                 quantErros += 1;
@@ -145,7 +156,7 @@ bool login(string &userEmail){
 int eliminarConta(string userEmail){
     //Recebe o argumento de email e após a confirmação apaga a conta
     int opcao;
-    string nomeArquivo = "assets/database.txt";
+    string nomeArquivo = path("database.txt");
     int linhaParaEliminar = consultarLinhadeArquivo(userEmail);
 
     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - ELIMINAR CONTA - ¦ - |" << resetCor() << endl;
@@ -165,7 +176,7 @@ int eliminarConta(string userEmail){
 
 int consultarPontos(string userEmail){
     //recebe email e exibe os pontos registados
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;
@@ -194,7 +205,7 @@ int consultarPontos(string userEmail){
 
 void consultarNome(string userEmail){
     //recebe email e exibe o nome cadastrado
-    ifstream arquivo("assets/database.txt");  // Abre o arquivo para leitura
+    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;
