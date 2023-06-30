@@ -5,7 +5,9 @@ Seguindo os requisitos solicitados no [projeto.](#situação)
 
 ## QuizVerse
 
-![](./docs/quizverselogo.gif)
+
+<img src="./docs/quizverselogo.gif" alt="Quiz Verse logo" width="540" height="503" />
+
 
   Aplicação é um Quiz sobre conhecimentos gerais com uma variedade de temas. A cada partida
 são 10 perguntas com múltiplas escolhas que valem 5 pontos a cada resposta correta. Temos
@@ -19,7 +21,7 @@ e que comecem os jogos!
 
 ## Usabilidade
 
-![](./docs/quizverse_usage.gif)
+![Quiz Verse usage](./docs/quizverse_usage.gif)
 
 ## Situação
 
