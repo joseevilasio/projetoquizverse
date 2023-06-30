@@ -8,13 +8,22 @@
 
 using namespace std;
 
-bool validarPassword(string userEmail, string password){
+struct tipoUsuario {
+    // struct para armazenar os dados do usuário
+    string nomeCompleto, email, password, pergunta, resposta;
+    int pontos = 0;
+    };
+
+int validarPassword(string userEmail, string password){
     //Recebe um argumento com string e valida se o password é o que consta no banco de dados
+       
     ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    vector<tipoUsuario> usuarios; //Recebe as structs
+    int contador = 0;
     
     if (arquivo.is_open()){
         string linha;
-
+        
         while (getline(arquivo, linha)) {
             istringstream iss(linha);
             string dado;
@@ -23,19 +32,22 @@ bool validarPassword(string userEmail, string password){
             while (getline(iss, dado, ',')) {
                 dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
             }
-                
-            if (userEmail == dados[1]){
-                if(password == dados[2]){
-                    return true;
+
+            usuarios.push_back({dados[0], dados[1], dados[2], dados[3], dados[4], stoi(dados[5])});
+
+            if (userEmail == usuarios[contador].email){  
+                if(password == usuarios[contador].password){
+                    return 0;
                     break;                
                 }  
             }
+            contador ++;
         }
         arquivo.close();
     } else {
         cout << "Falha ao abrir o arquivo." << endl;
     }
-    return false;
+    return 1;
 }
 
 bool recuperacaoPassword(){
@@ -109,29 +121,25 @@ bool login(string &userEmail){
 
         cout << endl;
         cout << "Email: ";
-        cin.ignore();
-        cin >> userEmail;
+        getline(cin, userEmail);
         cout << endl;
 
         cout << "Palavra-passe: ";        
-        cin.ignore();
         userPassword = mascararPassword();
         cout << endl;
 
-        bool validacao = validarPassword(userEmail, userPassword);
-
-        if ( validacao == true){
-                return true;
-                break;
+        if ( validarPassword(userEmail, userPassword) == 0){
+            return true;
+            break;
                 
-            } else{
-                //Se password for inválido, diminuir quantidades de tentativas.
-                quantErros += 1;
-                limparTela();
-                cout << corLetra("vermelho") << endl;
-                cout << "Palavra-passe inválida ou Email inválido - Tente novamente [" << quantErros << "]" << resetCor() << endl;
-                cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - LOGIN - ¦ - |" << resetCor() << endl;  
-            }
+        } else {
+            //Se password for inválido, diminuir quantidades de tentativas.
+            quantErros += 1;
+            limparTela();            
+            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - LOGIN - ¦ - |" << resetCor() << endl;
+            cout << corLetra("vermelho") << endl;
+            cout << "Palavra-passe inválida ou Email inválido - Tente novamente [" << quantErros << "]" << resetCor() << endl;
+        }
     }
 
     if (quantErros == 3){

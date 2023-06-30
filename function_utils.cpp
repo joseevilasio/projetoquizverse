@@ -42,15 +42,26 @@ void pressione() {
 
 void load(){
     //A função imprime na tela loading de 0% até 100%    
+    int totalTicks = 20;
     
-    for (int cont = 1; cont < 101; cont++){        
+    for (int i = 0; i < totalTicks; ++i)
+    {
+        cout << "\r[";
+        
+        for (int j = 0; j <= i; ++j)
+            cout << "=";
+        
+        for (int j = i + 1; j < totalTicks; ++j)
+            cout << " ";
+        
+        cout << "] " << (i + 1) * 5 << "%";
         cout.flush();
-        cout << "" << cont << "% ";
-        sleep(0.5);
-        limparTela();      
-        cout.flush(); 
+        
+        sleep(0.999);
     }
-    limparTela();  
+    
+    cout << endl;
+    limparTela();   
 }
 
 string corLetra(string cor) {
@@ -117,17 +128,6 @@ string resetCor(){
 
 }
 
-void loadX(){
-    //teste para aprimorar load   
-    
-    for (int cont = 1; cont < 101; cont++){        
-        
-        cout << corFundo("branco") << "  ";
-        load();
-
-    } 
-}
-
 
 string calcularEspaco(int tamanho) {
     string espaco = " ";    
@@ -177,10 +177,12 @@ void tempo(){
     //A função imprime na tela o tempo
     int segundos = 4;
     int segundosFinais = segundos / 2;
+    char ch;
+    
     
     for (int cont = segundos; cont > -1; cont--){
 
-        sleep(2);        
+        sleep(1);        
         if (cont > segundosFinais) {
             cout << corLetra("branco") << "00:" << cont << " >>";            
             cout.flush();
@@ -193,11 +195,12 @@ void tempo(){
             cout << "\033[2K"; // Limpa a linha atual
             cout << "\033[0G"; // Retorna para a coluna inicial
             }
+        
     }
         
     cout << resetCor();
 
-    //return 0; 
+    ch = getchar(); 
 }
 
 #endif
