@@ -15,7 +15,7 @@ namespace fs = filesystem;
 string path(string nomeArquivo) {
     //Recebe um nome de arquivo que está na pasta assets    
 
-    fs::path caminhoAbsoluto = fs::current_path() / "assets" / nomeArquivo;
+    fs::path caminhoAbsoluto = fs::current_path() / nomeArquivo;
     fs::path caminhoRelativo = fs::relative(caminhoAbsoluto);
 
     #ifdef _WIN32
@@ -27,7 +27,7 @@ string path(string nomeArquivo) {
 
 void eliminarLinhaArquivo(const string& nomeArquivo, int linhaParaEliminar) {
 
-    string _nomeArquivo = "assets/database.txt";
+    string _nomeArquivo = "database.txt";
     ifstream arquivoEntrada(nomeArquivo);
     ofstream arquivoTemporario("temp.txt");
 
@@ -50,7 +50,7 @@ void eliminarLinhaArquivo(const string& nomeArquivo, int linhaParaEliminar) {
 
 int consultarLinhadeArquivo(string userEmail){
     //Recebe email e identifica em qual linha consta os dados e retornar o valor em int
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    ifstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));  // Abre o arquivo para leitura
     int contarLinha = 0;
     
     if (arquivo.is_open()){
@@ -81,7 +81,7 @@ int consultarLinhadeArquivo(string userEmail){
 
 string buscarLinhadeArquivo(string userEmail){
     //Recebe email e identifica em qual linha consta os dados e retornar o valor em int
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura    
+    ifstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));  // Abre o arquivo para leitura    
     
     if (arquivo.is_open()){
         string linha;
@@ -109,8 +109,8 @@ string buscarLinhadeArquivo(string userEmail){
 
 void modificarPontos(string userEmail, int pontosUser) {
     
-    string _nomeArquivo = "assets/database.txt";
-    ifstream arquivoEntrada(path("database.txt"));
+    string _nomeArquivo = "database.txt";
+    ifstream arquivoEntrada(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));
     ofstream arquivoTemporario("temp.txt");
 
     string linha;

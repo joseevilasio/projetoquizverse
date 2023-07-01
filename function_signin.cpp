@@ -24,7 +24,7 @@ using namespace std;
 
 bool validarEmail(string email){
     //Recebe um argumento com string e valida se o email já existe no banco de dados
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    ifstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;
@@ -186,7 +186,7 @@ int signin(){
 
 
     //abrir o arquivo de database e salvar as informações coletadas
-    ofstream arquivo(path("database.txt"), ios::app);
+    fstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"), std::ios::in | std::ios::out);
 
     if (arquivo.is_open()) {
         arquivo << "" << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password << "," << usuario.pergunta << "," << usuario.resposta << "," << usuario.pontos << endl;

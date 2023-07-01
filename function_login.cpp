@@ -17,7 +17,7 @@ struct tipoUsuario {
 int validarPassword(string userEmail, string password){
     //Recebe um argumento com string e valida se o password é o que consta no banco de dados
        
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    ifstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));  // Abre o arquivo para leitura
     vector<tipoUsuario> usuarios; //Recebe as structs
     int contador = 0;
     
@@ -52,7 +52,7 @@ int validarPassword(string userEmail, string password){
 
 bool recuperacaoPassword(){
     //Solicita email e exibe pergunta de recuperação e valida se o pergunta é o que consta no banco de dados
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    ifstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));  // Abre o arquivo para leitura
     string resposta, email;
     int quantErros = 0;
 
@@ -157,7 +157,7 @@ bool login(string &userEmail){
 int eliminarConta(string userEmail){
     //Recebe o argumento de email e após a confirmação apaga a conta
     int opcao;
-    string nomeArquivo = path("database.txt");
+    string nomeArquivo = path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt");
     int linhaParaEliminar = consultarLinhadeArquivo(userEmail);
 
     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - ELIMINAR CONTA - ¦ - |" << resetCor() << endl;
@@ -177,7 +177,7 @@ int eliminarConta(string userEmail){
 
 int consultarPontos(string userEmail){
     //recebe email e exibe os pontos registados
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    ifstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;
@@ -206,7 +206,7 @@ int consultarPontos(string userEmail){
 
 void consultarNome(string userEmail){
     //recebe email e exibe o nome cadastrado
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
+    ifstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"));  // Abre o arquivo para leitura
     
     if (arquivo.is_open()){
         string linha;

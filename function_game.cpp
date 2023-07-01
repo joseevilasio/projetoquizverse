@@ -99,7 +99,7 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
 
 void ranking(){
     // Acessa banco de dados e retorna lista de pontuacao
-    string nomeArquivo = path("database.txt"); // Path
+    string nomeArquivo = path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"); // Path
     ifstream arquivo(nomeArquivo);  // Abre o arquivo para leitura
     vector<Pontuacao> pontuacoes; //Recebe as structs
     int contador = 1;
@@ -153,22 +153,22 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
 
     switch (opcaoTema) {
         case 1: // 1 > Tema Geografia e Cultura
-            if (opcaoDificuldade == 1){_path = path("1_geografia_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("1_geografia_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("1_geografia_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/1_geografia_1_faceis.txt");}
+            else if (opcaoDificuldade == 2){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/1_geografia_2_normais.txt");}
+            else if (opcaoDificuldade == 3){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/1_geografia_3_dificeis.txt");}
             break;
 
         case 2: // 2 > Tema Fisica e Matemática
-            if (opcaoDificuldade == 1){_path = path("2_matematica_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("2_matematica_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("2_matematica_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/2_matematica_1_faceis.txt");}
+            else if (opcaoDificuldade == 2){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/2_matematica_2_normais.txt");}
+            else if (opcaoDificuldade == 3){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/2_matematica_3_dificeis.txt");}
             break;
 
 
         case 3: // 3 > Tema Química e Biologia
-            if (opcaoDificuldade == 1){_path = path("3_quimica_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("3_quimica_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("3_quimica_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/3_quimica_1_faceis.txt");}
+            else if (opcaoDificuldade == 2){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/3_quimica_2_normais.txt");}
+            else if (opcaoDificuldade == 3){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/3_quimica_3_dificeis.txt");}
             break;
         
         default:
