@@ -13,21 +13,9 @@
 
 using namespace std;
 
-struct Pontuacao {
-    // Estrutura utilizando na funcao ranking
-        string nome;
-        int pontos;
-    };
-
-struct Perguntas {
-    // Estrutura utilizando na funcao jogar
-        string pergunta;
-        char respostaCorreta;
-    };
-
-bool compararPontos(const Pontuacao& pontuacao1, const Pontuacao& pontuacao2) {
+bool compararPontos(const Usuario& usuario1, const Usuario& usuario2) {
     // Comparar pontos
-    return pontuacao1.pontos > pontuacao2.pontos;}
+    return usuario1.pontos > usuario2.pontos;}
 
 int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
     // Abre menu de temas e dificuldades e retorna string com as informações    
@@ -99,150 +87,106 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
 
 void ranking(){
     // Acessa banco de dados e retorna lista de pontuacao
-    string nomeArquivo = path("database.txt"); // Path
-    ifstream arquivo(nomeArquivo);  // Abre o arquivo para leitura
-    vector<Pontuacao> pontuacoes; //Recebe as structs
     int contador = 1;
-    
-    if (arquivo.is_open()){
-        string linha;       
 
-        while (getline(arquivo, linha)) {
-            istringstream iss(linha);
-            string dado;
-            vector<string> dados;
-            
-            while (getline(iss, dado, ',')) {
-                dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
-            }
+    vector<Usuario> _ranking = databaseUsuarios();
 
-            pontuacoes.push_back({dados[0], stoi(dados[5])});
-        }
+    sort(_ranking.begin(), _ranking.end(), compararPontos);
 
-        sort(pontuacoes.begin(), pontuacoes.end(), compararPontos);
+    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Ranking - QuizVerse - ¦ - |" << resetCor() << endl;
+    cout << corLetra("ciano") << "------------------------------------" << endl;     
+    cout << "| # | Nome              | Pontos   |" << endl;
+    cout << "------------------------------------" << endl;
 
-        cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Ranking - QuizVerse - ¦ - |" << resetCor() << endl;
-        cout << corLetra("ciano") << "------------------------------------" << endl;     
-        cout << "| # | Nome              | Pontos   |" << endl;
-        cout << "------------------------------------" << endl;
-
-        for (const auto& pontuacao : pontuacoes) {                                    
-            cout << " " << contador << "º  " << pontuacao.nome;
-            size_t tamanhoString = pontuacao.nome.size();
-            cout << calcularEspaco(tamanhoString);
-            cout << " " << pontuacao.pontos << endl;
-            contador ++;            
-        }
-
-        cout << "------------------------------------" << resetCor() << endl;
-        cout << "" << endl;
-
-        arquivo.close();
-
-    } else { cout << "Falha ao abrir o arquivo." << endl;
+    for (const auto& usuario : _ranking) {                                    
+        cout << " " << contador << "º  " << usuario.nomeCompleto;
+        size_t tamanhoString = usuario.nomeCompleto.size();
+        cout << calcularEspaco(tamanhoString);
+        cout << " " << usuario.pontos << endl;
+        contador ++;            
     }
+
+    cout << "------------------------------------" << resetCor() << endl;
+    cout << "" << endl;
+    
 }
 
 int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
     // Recebe as informações de escolha de tema e dificuldade, email e inicia leitura de arquivo de perguntas
-    string _path;
 
-    Perguntas questao;
+    string _path; //recebe o path de acordo com as informações que vem da variavel opcaoTema opcaoDificuldade
+    //Perguntas questao; //instacia do struct
 
     switch (opcaoTema) {
         case 1: // 1 > Tema Geografia e Cultura
-            if (opcaoDificuldade == 1){_path = path("1_geografia_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("1_geografia_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("1_geografia_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = "1_geografia_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){_path = "1_geografia_2_normais.txt";}
+            else if (opcaoDificuldade == 3){_path = "1_geografia_3_dificeis.txt";}
             break;
 
         case 2: // 2 > Tema Fisica e Matemática
-            if (opcaoDificuldade == 1){_path = path("2_matematica_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("2_matematica_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("2_matematica_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = "2_matematica_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){_path = "2_matematica_2_normais.txt";}
+            else if (opcaoDificuldade == 3){_path = "2_matematica_3_dificeis.txt";}
             break;
 
 
         case 3: // 3 > Tema Química e Biologia
-            if (opcaoDificuldade == 1){_path = path("3_quimica_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("3_quimica_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("3_quimica_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = "3_quimica_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){_path = "3_quimica_2_normais.txt";}
+            else if (opcaoDificuldade == 3){_path = "3_quimica_3_dificeis.txt";}
             break;
         
         default:
             break;
     }
 
-    ifstream arquivo(_path); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas
-
     int pontosUser = 0; //Pontos de inicio da partida
     int pontosJogo = 5; //Pontos para cada pergunta correta
-    int contador = 0;
-    
-    if (arquivo.is_open()){
-        string linha;        
+    int contador = 0; //Contador de perguntas
+    char respostaUser; //Recebe resposta do usuário
 
-        while (getline(arquivo, linha)) {
-            istringstream iss(linha);
-            string dado;
-            vector<string> dados;            
+    for(const auto& questao : databasePerguntas(_path)) {
+        contador++;
 
-            while (getline(iss, dado, ',')) {
-                dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
+        limparTela();
+
+        cout << corLetra("azul") << corFundo("branco") << "QuizVerse" << resetCor() << endl;
+        cout << corLetra("ciano");
+        consultarNome(userEmail);
+        cout << " |  Pontos da partida : " << pontosUser << " | " << contador << "/10" << resetCor() << endl;
+        cout << "" << endl;            
+        cout << "Tema: " << questao.tema << endl; //Tema
+        cout << "Pergunta:" << endl;
+        cout << questao.pergunta << endl; //Pergunta
+        cout << questao.respostaA << endl; //Resposta A
+        cout << questao.respostaB << endl; //Resposta B
+        cout << questao.respostaC << endl; //Resposta C
+        cout << questao.respostaD << endl; //Resposta D
+        cout << "" << endl;
+        cout << "Insira a letra que corresponde com a resposta, antes que o tempo acabe!" << endl;
+        cin >> respostaUser;
+
+        if(respostaUser == questao.respostaCorreta){
+            cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
+            cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
+            pontosUser += pontosJogo;
+            sleep(2);
+            limparTela();
+            
+        } else{ 
+            cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
+            sleep(2);
+            limparTela();
             }
 
-            questao.respostaCorreta = dados[6][0];
-
-            contador++;
-            char respostaUser;
-            //char respostaCorreta = 'a';
-
-            limparTela();
-
-            cout << corLetra("azul") << corFundo("branco") << "QuizVerse" << resetCor() << endl;
-            cout << corLetra("ciano");
-            consultarNome(userEmail);
-            cout << " |  Pontos da partida : " << pontosUser << " | " << contador << "/10" << resetCor() << endl;
-            cout << "" << endl;            
-            cout << "Tema: " << dados[0] << endl; //Tema
-            cout << "Pergunta:" << endl;
-            cout << dados[1] << endl; //Pergunta
-            cout << dados[2] << endl; //Resposta A
-            cout << dados[3] << endl; //Resposta B
-            cout << dados[4] << endl; //Resposta C
-            cout << dados[5] << endl; //Resposta D
-            cout << "" << endl;
-            cout << "Insira a letra que corresponde com a resposta, antes que o tempo acabe!" << endl;
-            //tempo();
-            cin >> respostaUser;
-
-            if(respostaUser == questao.respostaCorreta){
-                cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
-                cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
-                pontosUser += pontosJogo;
-                sleep(2);
-                limparTela();
-                
-            } //else if (fim == 0){
-               // cout << "TEMPO ESGOTADO!";
-            //}
-            else{ 
-                cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
-                sleep(2);
-                limparTela();
-                }
-
-            // controle de fim de while da leitura de arquivo
-            if (contador == 10){
-                int _pontosUser = consultarPontos(userEmail) + pontosUser;                
-                modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
-                return pontosUser;
-                break;
-            }                       
-        }
-        arquivo.close();
-    } else {
-        cout << "Falha ao abrir o arquivo." << endl;
+        // controle de fim de while da leitura de arquivo
+        if (contador == 10){
+            int _pontosUser = consultarPontos(userEmail) + pontosUser;                
+            modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
+            return pontosUser;
+            break;
+        }                       
     }
 
     return 1;
