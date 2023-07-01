@@ -134,21 +134,6 @@ void eliminarDados(string userEmail) {
     rename("temp.txt", _nomeArquivo.c_str());
 }
 
-int consultarLinhadeArquivo(string userEmail){
-    //Recebe email e identifica em qual linha consta os dados e retornar o valor em int
-    Usuario usuario; // instancia da struct    
-    int contarLinha = 0;
-   
-    for(const auto& usuario : databaseUsuarios()) {          
-        if (userEmail == usuario.email){            
-            return contarLinha;
-            break;
-        }
-        contarLinha ++;
-    }  
-    return 0;
-}
-
 void modificarPontos(string userEmail, int pontosUser) {
     
     string _nomeArquivo = "assets/database.txt";    
