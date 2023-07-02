@@ -4,6 +4,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <random>
 #include "function_utils.cpp"
 #include "function_login.cpp"
 #include "function_database.cpp"
@@ -146,8 +147,23 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
     int contador = 0; //Contador de perguntas
     char respostaUser; //Recebe resposta do usuário
 
-    for(const auto& questao : databasePerguntas(_path)) {
+    vector<Perguntas> questoes = databasePerguntas(_path); // Gera os objetos Perguntas
+    vector<string> respostas; // Recebe de forma temporária apenas as respostas
+    random_device rd;
+    mt19937 generator(rd());
+
+    shuffle( questoes.begin(), questoes.end(), generator ); //mistura objetos no vector
+
+    for(const auto& questao : questoes) {
         contador++;
+
+        respostas.clear(); // limpar vector
+        respostas.push_back(questao.respostaA);
+        respostas.push_back(questao.respostaB);
+        respostas.push_back(questao.respostaC);
+        respostas.push_back(questao.respostaD);
+
+        shuffle( respostas.begin(), respostas.end(), generator ); //mistura objetos no vector
 
         limparTela();
 
@@ -159,10 +175,10 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
         cout << "Tema: " << questao.tema << endl; //Tema
         cout << "Pergunta:" << endl;
         cout << questao.pergunta << endl; //Pergunta
-        cout << questao.respostaA << endl; //Resposta A
-        cout << questao.respostaB << endl; //Resposta B
-        cout << questao.respostaC << endl; //Resposta C
-        cout << questao.respostaD << endl; //Resposta D
+        cout << respostas[0] << endl; //Resposta A
+        cout << respostas[1] << endl; //Resposta B
+        cout << respostas[2] << endl; //Resposta C
+        cout << respostas[3] << endl; //Resposta D
         cout << "" << endl;
         cout << "Insira a letra que corresponde com a resposta, antes que o tempo acabe!" << endl;
         cin >> respostaUser;
@@ -171,12 +187,12 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
             cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
             pontosUser += pontosJogo;
-            sleep(2);
+            sleep(1);
             limparTela();
             
         } else{ 
             cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
-            sleep(2);
+            sleep(1);
             limparTela();
             }
 
