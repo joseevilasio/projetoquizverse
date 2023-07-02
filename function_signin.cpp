@@ -24,29 +24,14 @@ using namespace std;
 
 bool validarEmail(string email){
     //Recebe um argumento com string e valida se o email já existe no banco de dados
-    ifstream arquivo(path("database.txt"));  // Abre o arquivo para leitura
     
-    if (arquivo.is_open()){
-        string linha;
-
-        while (getline(arquivo, linha)) {
-            istringstream iss(linha);
-            string dado;
-            vector<string> dados;
-
-            while (getline(iss, dado, ',')) {
-                dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
-            }
-                
-            if (email == dados[1]){               
-                return true;
-                break;
-            }
+    for(const auto& usuario : databaseUsuarios()) {          
+        if (email == usuario.email){
+            return true;
+            break;
+            
         }
-        arquivo.close();
-    } else {
-        cout << "Falha ao abrir o arquivo." << endl;
-    }
+    }    
     return false;
 }
 
@@ -185,7 +170,8 @@ int signin(){
     ofstream arquivo(path("database.txt"), ios::app);
 
     if (arquivo.is_open()) {
-        arquivo << "" << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password << "," << usuario.pergunta << "," << usuario.resposta << "," << usuario.pontos << endl;
+        arquivo << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password;
+        arquivo << "," << usuario.pergunta << "," << usuario.resposta << "," << usuario.pontos << endl;
         arquivo.close();
         limparTela();
         load();

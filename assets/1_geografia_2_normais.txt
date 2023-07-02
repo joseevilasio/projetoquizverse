@@ -1,10 +1,10 @@
-Geografia e cultura geral,Qual é o país conhecido como "Terra dos Cangurus"?, a) Nova Zelândia, b) Austrália, c) Canadá, d) África do Sul,b
-Geografia e cultura geral,Qual é o ponto mais alto do planeta Terra?, a) Monte Everest, b) Montanha K2, c) Montanha Denali, d) Monte Kilimanjaro,a
-Geografia e cultura geral,Quem pintou a obra "A Noite Estrelada"?, a) Claude Monet, b) Salvador Dalí, c) Vincent van Gogh, d) Pablo Picasso,c
-Geografia e cultura geral,Qual é o famoso evento brasileiro de carnaval que ocorre no estado do Rio de Janeiro?, a) Oktoberfest, b) São João, c) Festival de Parintins, d) Desfile das Escolas de Samba,d
-Geografia e cultura geral,Qual dos países abaixo não faz fronteira com a China?, a) Mongólia, b) Rússia, c) Tailândia, d) Índia,c
-Geografia e cultura geral,A França não faz fronteira com qual dos países abaixo?, a) Alemanha, b) Bélgica, c) Itália, d) Portugal,d
-Geografia e cultura geral,Quem escreveu a obra "Hamlet"?, a) William Shakespeare, b) Jane Austen, c) Charles Dickens, d) Fyodor Dostoevsky,a
-Geografia e cultura geral,Qual é o nome da cantora norte-americana que lançou hits como "Bad Romance" e "Poker Face"?, a) Lady Gaga, b) Katy Perry, c) Beyoncé, d) Adele, (Resposta correta: a)
-Geografia e cultura geral,Quem é a autora do livro "Harry Potter"?, a) J.R.R. Tolkien, b) J.K. Rowling, c) C.S. Lewis, d) George R.R. Martin,b
-Geografia e cultura geral,Qual é o estilo musical característico do Brasil?, a) Samba, b) Reggae, c) Tango, d) Flamenco,a
+Geografia e cultura geral,Qual é o país conhecido como "Terra dos Cangurus"?,Nova Zelândia,Austrália,Canadá,África do Sul,Austrália
+Geografia e cultura geral,Qual é o ponto mais alto do planeta Terra?,Monte Everest,Montanha K2,Montanha Denali,Monte Kilimanjaro,Monte Everest
+Geografia e cultura geral,Quem pintou a obra "A Noite Estrelada"?,Claude Monet,Salvador Dalí,Vincent van Gogh,Pablo Picasso,Vincent van Gogh
+Geografia e cultura geral,Qual é o famoso evento brasileiro de carnaval que ocorre no estado do Rio de Janeiro?,Oktoberfest,São João,Festival de Parintins,Desfile das Escolas de Samba,Desfile das Escolas de Samba
+Geografia e cultura geral,Qual dos países abaixo não faz fronteira com a China?,Mongólia,Rússia,Tailândia,Índia,Tailândia
+Geografia e cultura geral,A França não faz fronteira com qual dos países abaixo?,Alemanha,Bélgica,Itália,Portugal,Portugal
+Geografia e cultura geral,Quem escreveu a obra "Hamlet"?,William Shakespeare,Jane Austen,Charles Dickens,Fyodor Dostoevsky,William Shakespeare
+Geografia e cultura geral,Qual é o nome da cantora norte-americana que lançou hits como "Bad Romance" e "Poker Face"?,Lady Gaga,Katy Perry,Beyoncé,Adele,Lady Gaga
+Geografia e cultura geral,Quem é a autora do livro "Harry Potter"?,J.R.R. Tolkien,J.K. Rowling,C.S. Lewis,George R.R. Martin,J.K. Rowling
+Geografia e cultura geral,Qual é o estilo musical característico do Brasil?,Samba,Reggae,Tango,Flamenco,Samba

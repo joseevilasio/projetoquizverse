@@ -1,10 +1,10 @@
-Matemática e Física,Quem é conhecido como o pai da física moderna?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,b
-Matemática e Física,Qual cientista desenvolveu a teoria da relatividade?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,b
-Matemática e Física,Qual matemático é considerado o "príncipe dos matemáticos"?, a) Isaac Newton, b) Albert Einstein, c) Carl Friedrich Gauss, d) Pierre-Simon Laplace,c
-Matemática e Física,Qual matemático formulou o famoso teorema de Pitágoras?, a) Euclides, b) René Descartes, c) Blaise Pascal, d) Pitágoras,d
-Matemática e Física,Qual cientista descobriu as leis do movimento planetário?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,d
-Matemática e Física,Quem é considerado o pai da computação?, a) Alan Turing, b) Nikola Tesla, c) Charles Babbage, d) Isaac Newton,c
-Matemática e Física,Qual cientista formulou as leis do movimento e a lei da gravitação universal?, a) Isaac Newton, b) Albert Einstein, c) Nikola Tesla, d) Galileu Galilei,a
-Matemática e Física,Quem propôs a teoria da relatividade restrita?, a) Albert Einstein, b) Isaac Newton, c) Max Planck, d) Niels Bohr,a
-Matemática e Física,Qual é a unidade de medida da carga elétrica?, a) Ampère, b) Joule, c) Coulomb, d) Volt,c
-Matemática e Física,Quantos ovos tem uma dúzia?, a)10, b)11, c)13, d)12,d
+Matemática e Física,Quem é conhecido como o pai da física moderna?,Isaac Newton,Albert Einstein,Nikola Tesla,Galileu Galilei,Albert Einstein
+Matemática e Física,Qual cientista desenvolveu a teoria da relatividade?,Isaac Newton,Albert Einstein,Nikola Tesla,Galileu Galilei,Albert Einstein
+Matemática e Física,Qual matemático é considerado o "príncipe dos matemáticos"?,Isaac Newton,Albert Einstein,Carl Friedrich Gauss,Pierre-Simon Laplace,Carl Friedrich Gauss
+Matemática e Física,Qual matemático formulou o famoso teorema de Pitágoras?,Euclides,René Descartes,Blaise Pascal,Pitágoras,Pitágoras
+Matemática e Física,Qual cientista descobriu as leis do movimento planetário?,Isaac Newton,Albert Einstein,Nikola Tesla,Galileu Galilei,Galileu Galilei
+Matemática e Física,Quem é considerado o pai da computação?,Alan Turing,Nikola Tesla,Charles Babbage,Isaac Newton,Charles Babbage
+Matemática e Física,Qual cientista formulou as leis do movimento e a lei da gravitação universal?,Isaac Newton,Albert Einstein,Nikola Tesla,Galileu Galilei,Isaac Newton
+Matemática e Física,Quem propôs a teoria da relatividade restrita?,Albert Einstein,Isaac Newton,Max Planck,Niels Bohr,Albert Einstein
+Matemática e Física,Qual é a unidade de medida da carga elétrica?,Ampère,Joule,Coulomb,Volt,Coulomb
+Matemática e Física,Quantos ovos tem uma dúzia?,dez,onze,treze,doze,doze
