@@ -160,18 +160,11 @@ int signin(){
 
     cin.ignore(); // Limpa o buffer do cin
     getline(cin, usuario.resposta);
-    cout << "" << endl;
-
-    //recurso visual de loading e apresentar que cadastro foi realizado
-
-    limparTela();
-    load();
-    cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
-    pressione("continuar");
+    cout << "" << endl;   
 
 
     //abrir o arquivo de database e salvar as informações coletadas
-    fstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"), std::ios::in | std::ios::out);
+    fstream arquivo(path("database.txt"), ios::app);
 
     if (arquivo.is_open()) {
         arquivo << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password;
@@ -180,6 +173,7 @@ int signin(){
         limparTela();
         load();
         cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
+        pressione("continuar");
     } else {
         cout << "Falha na gravação do arquivo." << endl;
     }

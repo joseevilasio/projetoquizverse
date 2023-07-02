@@ -27,13 +27,13 @@ bool recuperacaoPassword(){
     string resposta, email;
     int quantErros = 0;
 
-    cabecalho("RECUPERAÇÃO DE PALAVRA-PASSE");
+    cabecalho(" RECUPERAÇÃO DE CONTA");
     cout << "Digite seu email: ";
     cin.ignore();    
     cin >> email;
 
     if (validarEmail(email) == false){
-        cout << corLetra("vermelho") << "Email não está cadastrado!" << resetCor();
+        cout << corLetra("vermelho") << "Email não está cadastrado!" << resetCor() << endl;
         return false;
     }
   
@@ -51,7 +51,7 @@ bool recuperacaoPassword(){
                     cout << corLetra("vermelho") << corFundo("branco") << "Atenção! Sua palavra passe:" << endl;
                     cout << corLetra("verde") << corFundo("branco") << usuario.password << resetCor() << endl;
                     cout << "" << endl;                    
-                    pressione();
+                    pressione("voltar");
                     return true;
                     break;
 
@@ -115,7 +115,7 @@ int eliminarConta(string userEmail){
     //Recebe o argumento de email e após a confirmação apaga a conta
     int opcao;
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - ELIMINAR CONTA - ¦ - |" << resetCor() << endl;
+    cabecalho("ELIMINAR CONTA");
     cout << corLetra("vermelho") << "Tem certeza que deseja eliminar a conta ?" << resetCor() << endl;
     cout << corLetra("vermelho") << "1 - SIM!" << resetCor() << endl;
     cout << corLetra("azul") << "2 - Não, voltar para menu anterior." << resetCor() << endl;
@@ -125,6 +125,8 @@ int eliminarConta(string userEmail){
         eliminarDados(userEmail);
         limparTela();        
         cout << corLetra("vermelho") << "Conta eliminada com sucesso." << resetCor() << endl;
+        cin.ignore();
+        pressione("continuar");
         return 0;
     }
     return 1;

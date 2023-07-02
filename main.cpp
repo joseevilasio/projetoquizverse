@@ -29,7 +29,7 @@ int main() {
 
         telaInicial();
 
-        //load();
+        load();
         
         cabecalho("MENU Inicial");
         cout << "" << endl;
@@ -37,10 +37,10 @@ int main() {
         cout << "2 > Signin" << endl;
         cout << "3 > Recuperar Palavra-Passe" << endl;   
         cout << "4 > Sair" << endl;
-        cout << ">>> ";
+        cout << ">>> ";       
         cin >> opcao;
 
-        switch (opcao) {
+        switch (opcao) {            
 
             case 1: //Login
             limparTela();                       
@@ -52,6 +52,7 @@ int main() {
                     limparTela();
                     //load();
                     cabecalho("MENU Jogo");
+                    cout << corLetra("verde") << " ";
                     consultarNome(userEmail);
                     cout  << " - Total de " << consultarPontos(userEmail) << " pontos." << resetCor() << endl;
                     cout << "" << endl;
@@ -60,8 +61,8 @@ int main() {
                     cout << "3 > Reset de Pontos" << endl;   
                     cout << "4 > Regras" << endl;
                     cout << "5 > Eliminar Conta" << endl;
-                    cout << "6 > Sair" << endl;
-                    cout << ">>> ";
+                    cout << "6 > Voltar ao menu inicial" << endl;
+                    cout << ">>> ";                    
                     cin >> opcaoMenuJogo;
                     limparTela();
 
@@ -89,8 +90,7 @@ int main() {
                         case 4: // Regras
                             limparTela();
                             cin.ignore();
-                            regras();
-                            cin.ignore(); // trocar por um pressione                        
+                            regras();                       
                             break;
 
                         case 5: // Eliminar Conta
@@ -101,10 +101,18 @@ int main() {
                         }                        
                         break;
 
-                        case 6: // Sair                        
+                        case 6: // Voltar
+                        cin.clear();                      
                         break;
 
-                        default: cout << "A " << opcaoMenuJogo << " é uma entrada incorreta! - Tente novamente." << endl; limparTela(); break;
+                        default:
+                        limparTela();
+                        cout << corLetra("vermelho") << "'" << opcaoMenuJogo << "' é uma entrada incorreta! - Tente novamente." << resetCor() << endl;
+                        cin.ignore();            
+                        pressione("continuar");
+                        cin.clear();
+                        limparTela();                      
+                        break;
 
                     }
                 }
@@ -131,7 +139,9 @@ int main() {
                 limparTela();
                 load();
                 // redirecionar para o menu inicial
-            } else{opcao = 4;} //adicionar tela de bloqueio
+            } else {
+            cin.ignore();
+            pressione("voltar"); }
             break;
 
             case 4: //Sair      
@@ -139,8 +149,12 @@ int main() {
             exit(0);
             break;
 
-            default: cout << "" << opcao << " é uma entrada incorreta! - Tente novamente." << endl; 
+            default:
+            limparTela();
+            cout << corLetra("vermelho") << "'" << opcao << "' é uma entrada incorreta! - Tente novamente." << resetCor() << endl;
+            cin.ignore();            
             pressione("continuar");
+            cin.clear();
             break;
         }
     }

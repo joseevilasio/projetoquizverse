@@ -225,7 +225,7 @@ int resetPontos(string userEmail){
     int opcao;
     int pontosUser = 0;
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RESET DE PONTOS - ¦ - |" << resetCor() << endl;
+    cabecalho("RESET DE PONTOS");
     cout << corLetra("vermelho") << "Tem certeza que deseja fazer o reset de pontos ?" << resetCor() << endl;
     cout << corLetra("vermelho") << "1 - SIM!" << resetCor() << endl;
     cout << corLetra("azul") << "2 - Não, voltar para menu anterior." << resetCor() << endl;
@@ -236,7 +236,8 @@ int resetPontos(string userEmail){
         limparTela();        
         cout << corLetra("vermelho") << "Reset de pontos realizado com sucesso." << resetCor() << endl;
         cout << "";
-        pressione("continuar");
+        cin.ignore();
+        pressione("continuar");        
         return 0;
     }
     return 1;
@@ -244,7 +245,7 @@ int resetPontos(string userEmail){
 
 void regras() {
 
-    cout << "Regras do jogo Quiz " << endl;
+    cabecalho("REGRAS");
     cout << corLetra("azul") << "---------------------------------------------------------------------------------------------" << resetCor() << endl;
     cout << corLetra("azul") << "|"  << resetCor() << "1- Registar os dados do jogodar iniciando com login-signin;                                " << corLetra("azul") << "|"  << resetCor() << endl; 
     cout << corLetra("azul") << "|"  << resetCor() << "2- Após a registo o jogador, escolher o tema do jogo e os três níveis de dificuldade;      " << corLetra("azul") << "|"  << resetCor() << endl;
@@ -260,6 +261,7 @@ void regras() {
     cout << corLetra("azul") << "|"  << resetCor() << " -Os jogadores podem redefinir a sua pontuação para zero, começando do início;             " << corLetra("azul") << "|"  << resetCor() << endl;
     cout << corLetra("azul") << "|"  << resetCor() << " -Caso um jogador esqueça a sua password, fornecemos o mecanismo para recuperá-lo.         " << corLetra("azul") << "|"  << resetCor() << endl;
     cout << corLetra("azul") << "---------------------------------------------------------------------------------------------" << resetCor() << endl;
+    pressione("voltar");
 }
 
 

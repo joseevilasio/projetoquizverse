@@ -203,14 +203,11 @@ void telaInicial(){
 
 void telaSaida(){
 
-
     limparTela();
+    cin.ignore();
     cout << "" << endl;
     cout << "" << endl;
-    cabecalho("Um adeus do");
-    cout << "" << endl;
-    cout << "" << endl;
-    cout << "" << endl;
+    cabecalho("Um adeus do");    
     cout << "" << endl;
     cout << "" << endl;
     cout << "Projeto Realizado por: " << endl;
