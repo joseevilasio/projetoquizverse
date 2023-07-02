@@ -1,10 +1,10 @@
-Tema:Química e Biologia,Qual é o nome da reação química que ocorre quando um ácido reage com uma base para formar sal e água?,a)Oxidação,b)Redução,c)Hidrólise,d)Neutralização,d
-Tema:Química e Biologia,Qual é o composto químico responsável pela sensação de queimação causada por uma picada de formiga?,a)Ácido acético,b) Ácido clorídrico,c) Ácido fórmico,d)Ácido sulfúrico,c
-Tema:Química e Biologia,Qual é o processo de transformação da energia solar em energia química nas plantas?,a) Fotossíntese,b)Respiração celular,c)Digestão,d)Circulação,a
-Tema:Química e Biologia,Qual é a célula reprodutora masculina?,a)Óvulo,b)Espermatozoide,c)Zigoto,d)Embriãob,b
-Tema:Química e Biologia,Qual é a célula reprodutora feminina?,a)Óvulo,b)Espermatozoide,c)Zigoto,d)Embrião,a
-Tema:Química e Biologia,Qual cientista desenvolveu a teoria da evolução das espécies por meio da seleção natural?,a)Charles Darwin,b)Gregor Mendel,c)Louis Pasteur,d)Alexander Fleming,a
-Tema:Química e Biologia,Quem foi o cientista responsável pela descoberta da penicilina?,a)Marie Curie - Teoria da radioatividade,b)Louis Pasteur - Teoria dos germes,c) Alexander Fleming - Teoria dos antibióticos,d)Gregor Mendel - Teoria da hereditariedade,c
-Tema:Química e Biologia,Qual cientista desenvolveu a teoria da seleção natural das espécies?,a)Alfred Russel Wallace,b)Carl Linnaeus,c)Alexander von Humboldt,d)Ernst Haeckel,a
-Tema:Química e Biologia,Qual foi o cientista que descobriu o hidrogênio?,a)Henry Cavendish,b)Carl Linnaeus,c)Alexander von Humboldt, d) Ernst Haeckel,a
-Tema:Química e Biologia,Qual foi o cientista que descobriu o oxigênio?,a)Henry Cavendish,b)Carl Wilhelm,c)Alexander von Humboldt,d)Ernst Haeckel,b
+Química e Biologia,Qual é o nome da reação química que ocorre quando um ácido reage com uma base para formar sal e água?,Oxidação,Redução,Hidrólise,Neutralização,Neutralização
+Química e Biologia,Qual é o composto químico responsável pela sensação de queimação causada por uma picada de formiga?,Ácido acético, Ácido clorídrico, Ácido fórmico,Ácido sulfúrico,Ácido fórmico
+Química e Biologia,Qual é o processo de transformação da energia solar em energia química nas plantas?,Fotossíntese,Respiração celular,Digestão,Circulação,Fotossíntese
+Química e Biologia,Qual é a célula reprodutora masculina?,Óvulo,Espermatozoide,Zigoto,Embrião,Espermatozoide
+Química e Biologia,Qual é a célula reprodutora feminina?,Óvulo,Espermatozoide,Zigoto,Embrião,Óvulo
+Química e Biologia,Qual cientista desenvolveu a teoria da evolução das espécies por meio da seleção natural?,Charles Darwin,Gregor Mendel,Louis Pasteur,Alexander Fleming,Charles Darwin
+Química e Biologia,Quem foi o cientista responsável pela descoberta da penicilina?,Marie Curie - Teoria da radioatividade,Louis Pasteur - Teoria dos germes,Alexander Fleming - Teoria dos antibióticos,Gregor Mendel - Teoria da hereditariedade,Alexander Fleming - Teoria dos antibióticos
+Química e Biologia,Qual cientista desenvolveu a teoria da seleção natural das espécies?,Alfred Russel Wallace,Carl Linnaeus,Alexander von Humboldt,Ernst Haeckel,Alfred Russel Wallace
+Química e Biologia,Qual foi o cientista que descobriu o hidrogênio?,Henry Cavendish,Carl Linnaeus,Alexander von Humboldt,Ernst Haeckel,Henry Cavendish
+Química e Biologia,Qual foi o cientista que descobriu o oxigênio?,Henry Cavendish,Carl Wilhelm,Alexander von Humboldt,Ernst Haeckel,Carl Wilhelm
