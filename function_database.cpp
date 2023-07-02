@@ -20,8 +20,7 @@ struct Usuario {
 
 struct Perguntas {
     // struct para armazenar os dados de perguntas
-        string tema, pergunta, respostaA, respostaB, respostaC, respostaD;
-        char respostaCorreta;
+        string tema, pergunta, respostaA, respostaB, respostaC, respostaD, respostaCorreta;
     };
 
 string path(string nomeArquivo) {
@@ -41,6 +40,7 @@ vector<Perguntas> databasePerguntas (string nomeArquivo) {
     // Recebe path e retorna um vector com as structs
     Perguntas questao; // instancia da struct
     vector<Perguntas> questoes; //Recebe as structs
+    string _respostaCorreta; // string para receber resposta sem espaço
 
     ifstream arquivo(path(nomeArquivo)); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas    
     
@@ -62,8 +62,12 @@ vector<Perguntas> databasePerguntas (string nomeArquivo) {
             questao.respostaB = dados[3];
             questao.respostaC = dados[4];
             questao.respostaD = dados[5];
-            questao.respostaCorreta = dados[6][0];
-
+            //Lidar com espaços em brancos gerados no getline
+            _respostaCorreta.clear();
+            for (size_t i = 0; i < (dados[6].size() - 1) ; i++) {
+                _respostaCorreta.push_back(dados[6][i]);
+            }
+            questao.respostaCorreta = _respostaCorreta;
             questoes.push_back(questao);
         }
 
@@ -81,7 +85,7 @@ vector<Usuario> databaseUsuarios () {
     Usuario usuario; // instancia da struct
     vector<Usuario> usuarios; //Recebe as structs
 
-    ifstream arquivo(path("database.txt")); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas    
+    ifstream arquivo(path("database.txt"));
     
     if (arquivo.is_open()){
         string linha;        

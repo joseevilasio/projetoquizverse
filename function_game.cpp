@@ -145,7 +145,8 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
     int pontosUser = 0; //Pontos de inicio da partida
     int pontosJogo = 5; //Pontos para cada pergunta correta
     int contador = 0; //Contador de perguntas
-    char respostaUser; //Recebe resposta do usuário
+    int respostaUser; //Recebe resposta do usuário
+    string respostaEscolhida;
 
     vector<Perguntas> questoes = databasePerguntas(_path); // Gera os objetos Perguntas
     vector<string> respostas; // Recebe de forma temporária apenas as respostas
@@ -161,7 +162,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
         respostas.push_back(questao.respostaA);
         respostas.push_back(questao.respostaB);
         respostas.push_back(questao.respostaC);
-        respostas.push_back(questao.respostaD);
+        respostas.push_back(questao.respostaD);        
 
         shuffle( respostas.begin(), respostas.end(), generator ); //mistura objetos no vector
 
@@ -175,24 +176,35 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
         cout << "Tema: " << questao.tema << endl; //Tema
         cout << "Pergunta:" << endl;
         cout << questao.pergunta << endl; //Pergunta
-        cout << respostas[0] << endl; //Resposta A
-        cout << respostas[1] << endl; //Resposta B
-        cout << respostas[2] << endl; //Resposta C
-        cout << respostas[3] << endl; //Resposta D
+        cout << "1) " << respostas[0] << endl; //Resposta A
+        cout << "2) " << respostas[1] << endl; //Resposta B
+        cout << "3) " << respostas[2] << endl; //Resposta C
+        cout << "4) " << respostas[3] << endl; //Resposta D
         cout << "" << endl;
         cout << "Insira a letra que corresponde com a resposta, antes que o tempo acabe!" << endl;
+        cin.ignore();
         cin >> respostaUser;
 
-        if(respostaUser == questao.respostaCorreta){
+        if (respostaUser == 1) {
+            respostaEscolhida = respostas[0];
+        } else if (respostaUser == 2) {
+            respostaEscolhida = respostas[1];
+        } else if (respostaUser == 3) {
+            respostaEscolhida = respostas[2];
+        } else if (respostaUser == 4) {
+            respostaEscolhida = respostas[3];
+        }        
+
+        if( respostaEscolhida == questao.respostaCorreta){
             cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
             cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
             pontosUser += pontosJogo;
             sleep(1);
             limparTela();
             
-        } else{ 
+        } else{                   
             cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
-            sleep(1);
+            sleep(1);           
             limparTela();
             }
 

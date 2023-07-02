@@ -170,7 +170,8 @@ int signin(){
     ofstream arquivo(path("database.txt"), ios::app);
 
     if (arquivo.is_open()) {
-        arquivo << "" << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password << "," << usuario.pergunta << "," << usuario.resposta << "," << usuario.pontos << endl;
+        arquivo << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password;
+        arquivo << "," << usuario.pergunta << "," << usuario.resposta << "," << usuario.pontos << endl;
         arquivo.close();
         limparTela();
         load();
