@@ -82,12 +82,16 @@ int main() {
                         break;
 
                         case 3: // Reset de Pontos 
-                        limparTela();
-                        resetPontos(userEmail);
-                        break;
+                            limparTela();
+                            resetPontos(userEmail);
+                            break;
 
-                        case 4: // Regras                        
-                        break;
+                        case 4: // Regras
+                            limparTela();
+                            cin.ignore();
+                            regras();
+                            cin.ignore(); // trocar por um pressione                        
+                            break;
 
                         case 5: // Eliminar Conta
                         limparTela();                        

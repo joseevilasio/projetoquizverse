@@ -1,10 +1,10 @@
-Química e Biologia,Qual é a fórmula química correta para o peróxido de hidrogênio (água oxigenada)?, a) H2O, b) H2O2, c) HOH, d) H2SO4,b
-Química e Biologia,A Teoria do Flogisto (ou do flogístico) foi desenvolvida pelo químico e médico alemão:, a) Georg Ernst Stahl, b) Antoine Lavoisier, c) Dmitri Mendeleiev, d) Marie Curie,a
-Química e Biologia,Qual é o órgão responsável pela produção da insulina no corpo humano?, a) Fígado, b) Pâncreas, c) Rim, d) Baço,b
-Química e Biologia,Qual é o órgão responsável pela filtragem do sangue e produção de urina?, a) Fígado, b) Pâncreas, c) Rim, d) Baço,c
-Quimica e Biologia,Qual é a unidade básica da estrutura dos seres vivos?, a) Célula, b) Tecido, c) Órgão, d) Sistema,a
-Química e Biologia,Qual é o pH neutro na escala de pH?, a) 1, b) 5, c) 7, d) 14,c
-Química e Biologia,Qual é o nome dado à reação química em que ocorre a queima de um combustível na presença de oxigênio?, a) Combustão, b) Oxidação, c) Redução, d) Decomposição,a
-Química e Biologia,Qual é o símbolo químico do elemento oxigênio?, a) O, b) Ox, c) Oxg, d) Oxgênio,a
-Química e Biologia,Qual é a fórmula química da água?, a) H2O2, b) H2O, c) H2O3, d) H2O4,b
-Química e Biologia,Qual é o símbolo químico do Ferro?, a) Cu, b) Fe, c) Zn, d) Co,b
+Química e Biologia,Qual é a fórmula química correta para o peróxido de hidrogênio (água oxigenada)?,H2O,H2O2,HOH,H2SO4,H2O2
+Química e Biologia,A Teoria do Flogisto (ou do flogístico) foi desenvolvida pelo químico e médico alemão:,Georg Ernst Stahl,Antoine Lavoisier,Dmitri Mendeleiev,Marie Curie,Georg Ernst Stahl
+Química e Biologia,Qual é o órgão responsável pela produção da insulina no corpo humano?,Fígado,Pâncreas,Rim,Baço,Pâncreas
+Química e Biologia,Qual é o órgão responsável pela filtragem do sangue e produção de urina?,Fígado,Pâncreas,Rim,Baço,Rim
+Química e Biologia,Qual é a unidade básica da estrutura dos seres vivos?,Célula,Tecido,Órgão,Sistema,Célula
+Química e Biologia,Qual é o pH neutro na escala de pH?,1,5,7,14,7
+Química e Biologia,Qual é o nome dado à reação química em que ocorre a queima de um combustível na presença de oxigênio?,Combustão,Oxidação,Redução,Decomposição,Combustão
+Química e Biologia,Qual é o símbolo químico do elemento oxigênio?,O,Ox,Oxg,Oxgênio,O
+Química e Biologia,Qual é a fórmula química da água?,H2O2,H2O,H2O3,H2O4,H2O
+Química e Biologia,Qual é o símbolo químico do Ferro?,Cu,Fe,Zn,Co,Fe

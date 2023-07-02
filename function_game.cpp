@@ -4,6 +4,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <random>
 #include "function_utils.cpp"
 #include "function_login.cpp"
 #include "function_database.cpp"
@@ -13,21 +14,9 @@
 
 using namespace std;
 
-struct Pontuacao {
-    // Estrutura utilizando na funcao ranking
-        string nome;
-        int pontos;
-    };
-
-struct Perguntas {
-    // Estrutura utilizando na funcao jogar
-        string pergunta;
-        char respostaCorreta;
-    };
-
-bool compararPontos(const Pontuacao& pontuacao1, const Pontuacao& pontuacao2) {
+bool compararPontos(const Usuario& usuario1, const Usuario& usuario2) {
     // Comparar pontos
-    return pontuacao1.pontos > pontuacao2.pontos;}
+    return usuario1.pontos > usuario2.pontos;}
 
 int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
     // Abre menu de temas e dificuldades e retorna string com as informações    
@@ -99,151 +88,133 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
 
 void ranking(){
     // Acessa banco de dados e retorna lista de pontuacao
-    string nomeArquivo = path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"); // Path
-    ifstream arquivo(nomeArquivo);  // Abre o arquivo para leitura
-    vector<Pontuacao> pontuacoes; //Recebe as structs
     int contador = 1;
-    
-    if (arquivo.is_open()){
-        string linha;       
 
-        while (getline(arquivo, linha)) {
-            istringstream iss(linha);
-            string dado;
-            vector<string> dados;
-            
-            while (getline(iss, dado, ',')) {
-                dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
-            }
+    vector<Usuario> _ranking = databaseUsuarios();
 
-            pontuacoes.push_back({dados[0], stoi(dados[5])});
-        }
+    sort(_ranking.begin(), _ranking.end(), compararPontos);
 
-        sort(pontuacoes.begin(), pontuacoes.end(), compararPontos);
+    cabecalho("Ranking");
+    cout << corLetra("ciano") << "------------------------------------" << endl;     
+    cout << "| # | Nome              | Pontos   |" << endl;
+    cout << "------------------------------------" << endl;
 
-        cabecalho("Ranking");
-        cout << corLetra("ciano") << "------------------------------------" << endl;     
-        cout << "| # | Nome              | Pontos   |" << endl;
-        cout << "------------------------------------" << endl;
-
-        for (const auto& pontuacao : pontuacoes) {                                    
-            cout << " " << contador << "º  " << pontuacao.nome;
-            size_t tamanhoString = pontuacao.nome.size();
-            cout << calcularEspaco(tamanhoString);
-            cout << " " << pontuacao.pontos << endl;
-            contador ++;            
-        }
-
-        cout << "------------------------------------" << resetCor() << endl;
-        cout << "" << endl;
-       
-        pressione("continuar"); 
-
-        arquivo.close();
-
-    } else { cout << "Falha ao abrir o arquivo." << endl;
+    for (const auto& usuario : _ranking) {                                    
+        cout << " " << contador << "º  " << usuario.nomeCompleto;
+        size_t tamanhoString = usuario.nomeCompleto.size();
+        cout << calcularEspaco(tamanhoString);
+        cout << " " << usuario.pontos << endl;
+        contador ++;
     }
+
+    cout << "------------------------------------" << resetCor() << endl;
+    cout << "" << endl;
+    
 }
 
 int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
     // Recebe as informações de escolha de tema e dificuldade, email e inicia leitura de arquivo de perguntas
-    string _path;
 
-    Perguntas questao;
+    string _path; //recebe o path de acordo com as informações que vem da variavel opcaoTema opcaoDificuldade
+    //Perguntas questao; //instacia do struct
 
     switch (opcaoTema) {
         case 1: // 1 > Tema Geografia e Cultura
-            if (opcaoDificuldade == 1){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/1_geografia_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/1_geografia_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/1_geografia_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = "1_geografia_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){_path = "1_geografia_2_normais.txt";}
+            else if (opcaoDificuldade == 3){_path = "1_geografia_3_dificeis.txt";}
             break;
 
         case 2: // 2 > Tema Fisica e Matemática
-            if (opcaoDificuldade == 1){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/2_matematica_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/2_matematica_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/2_matematica_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = "2_matematica_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){_path = "2_matematica_2_normais.txt";}
+            else if (opcaoDificuldade == 3){_path = "2_matematica_3_dificeis.txt";}
             break;
 
 
         case 3: // 3 > Tema Química e Biologia
-            if (opcaoDificuldade == 1){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/3_quimica_1_faceis.txt");}
-            else if (opcaoDificuldade == 2){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/3_quimica_2_normais.txt");}
-            else if (opcaoDificuldade == 3){_path = path("C:/Users/gabri/Documents/projetoQuiz/assets/3_quimica_3_dificeis.txt");}
+            if (opcaoDificuldade == 1){_path = "3_quimica_1_faceis.txt";}
+            else if (opcaoDificuldade == 2){_path = "3_quimica_2_normais.txt";}
+            else if (opcaoDificuldade == 3){_path = "3_quimica_3_dificeis.txt";}
             break;
         
         default:
             break;
     }
 
-    ifstream arquivo(_path); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas
-
     int pontosUser = 0; //Pontos de inicio da partida
     int pontosJogo = 5; //Pontos para cada pergunta correta
-    int contador = 0;
-    
-    if (arquivo.is_open()){
-        string linha;        
+    int contador = 0; //Contador de perguntas
+    int respostaUser; //Recebe resposta do usuário
+    string respostaEscolhida;
 
-        while (getline(arquivo, linha)) {
-            istringstream iss(linha);
-            string dado;
-            vector<string> dados;            
+    vector<Perguntas> questoes = databasePerguntas(_path); // Gera os objetos Perguntas
+    vector<string> respostas; // Recebe de forma temporária apenas as respostas
+    random_device rd;
+    mt19937 generator(rd());
 
-            while (getline(iss, dado, ',')) {
-                dados.push_back(dado); //A cada volta no loop dentro da linha recebe o valor separado por vírgula                
+    shuffle( questoes.begin(), questoes.end(), generator ); //mistura objetos no vector
+
+    for(const auto& questao : questoes) {
+        contador++;
+
+        respostas.clear(); // limpar vector
+        respostas.push_back(questao.respostaA);
+        respostas.push_back(questao.respostaB);
+        respostas.push_back(questao.respostaC);
+        respostas.push_back(questao.respostaD);        
+
+        shuffle( respostas.begin(), respostas.end(), generator ); //mistura objetos no vector
+
+        limparTela();
+
+        cabecalho("");
+        cout << corLetra("ciano");
+        consultarNome(userEmail);
+        cout << " |  Pontos da partida : " << pontosUser << " | " << contador << "/10" << resetCor() << endl;
+        cout << "" << endl;            
+        cout << "Tema: " << questao.tema << endl; //Tema
+        cout << "Pergunta:" << endl;
+        cout << questao.pergunta << endl; //Pergunta
+        cout << "1) " << respostas[0] << endl; //Resposta A
+        cout << "2) " << respostas[1] << endl; //Resposta B
+        cout << "3) " << respostas[2] << endl; //Resposta C
+        cout << "4) " << respostas[3] << endl; //Resposta D
+        cout << "" << endl;
+        cout << "Insira a letra que corresponde com a resposta, antes que o tempo acabe!" << endl;
+        cin.ignore();
+        cin >> respostaUser;
+
+        if (respostaUser == 1) {
+            respostaEscolhida = respostas[0];
+        } else if (respostaUser == 2) {
+            respostaEscolhida = respostas[1];
+        } else if (respostaUser == 3) {
+            respostaEscolhida = respostas[2];
+        } else if (respostaUser == 4) {
+            respostaEscolhida = respostas[3];
+        }        
+
+        if( respostaEscolhida == questao.respostaCorreta){
+            cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
+            cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
+            pontosUser += pontosJogo;
+            sleep(1);
+            limparTela();
+            
+        } else{                   
+            cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
+            sleep(1);           
+            limparTela();
             }
 
-            questao.respostaCorreta = dados[6][0];
-
-            contador++;
-            char respostaUser;
-            //char respostaCorreta = 'a';
-
-            limparTela();
-
-            cabecalho("");
-            consultarNome(userEmail);
-            cout << " |  Pontos da partida : " << pontosUser << " | " << contador << "/10" << resetCor() << endl;
-            cout << "" << endl;            
-            cout << "Tema: " << dados[0] << endl; //Tema
-            cout << "Pergunta:" << endl;
-            cout << dados[1] << endl; //Pergunta
-            cout << dados[2] << endl; //Resposta A
-            cout << dados[3] << endl; //Resposta B
-            cout << dados[4] << endl; //Resposta C
-            cout << dados[5] << endl; //Resposta D
-            cout << "" << endl;
-            cout << "Insira a letra que corresponde com a resposta, antes que o tempo acabe!" << endl;
-            //tempo();
-            cin >> respostaUser;
-
-            if(respostaUser == questao.respostaCorreta){
-                cout << corLetra("verde") << "Resposta Correta!" << resetCor() << endl;
-                cout << corLetra("magenta") << "Boa! +" << pontosJogo << resetCor() << endl;
-                pontosUser += pontosJogo;
-                sleep(1);
-                limparTela();
-                
-            } //else if (fim == 0){
-               // cout << "TEMPO ESGOTADO!";
-            //}
-            else{ 
-                cout << corLetra("vermelho") << "Resposta Errada!" << resetCor() << endl;
-                sleep(1);
-                limparTela();
-                }
-
-            // controle de fim de while da leitura de arquivo
-            if (contador == 10){
-                int _pontosUser = consultarPontos(userEmail) + pontosUser;                
-                modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
-                return pontosUser;
-                break;
-            }                       
+        // controle de fim de while da leitura de arquivo
+        if (contador == 10){
+            int _pontosUser = consultarPontos(userEmail) + pontosUser;                
+            modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
+            return pontosUser;
+            break;
         }
-        arquivo.close();
-    } else {
-        cout << "Falha ao abrir o arquivo." << endl;
     }
 
     return 1;
@@ -269,6 +240,26 @@ int resetPontos(string userEmail){
         return 0;
     }
     return 1;
+}
+
+void regras() {
+
+    cout << "Regras do jogo Quiz " << endl;
+    cout << corLetra("azul") << "---------------------------------------------------------------------------------------------" << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "1- Registar os dados do jogodar iniciando com login-signin;                                " << corLetra("azul") << "|"  << resetCor() << endl; 
+    cout << corLetra("azul") << "|"  << resetCor() << "2- Após a registo o jogador, escolher o tema do jogo e os três níveis de dificuldade;      " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "3- Inicio do Jogo:                                                                         " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Ao selecionar o tema e o nível de dificuldade, são apresentadas 10 perguntas;           " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Para cada pergunta terá 4 respostas com seu tempo e dentre elas uma é a certa;          " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Cada resposta certa o jogador ganha 5 pontos e a reposta errada não ganha nenhum ponto. " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "4- Fim do Jogo:                                                                            " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " - Ao responder todas as perguntas o sistema irá partilhar pontos adquiridos nessa rodada  " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "   mais pontos totais.                                                                     " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << "5- Adicionais:                                                                             " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " -Os jogadores têm a opção de eliminar a sua conta e todos os dados associados a ela;      " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " -Os jogadores podem redefinir a sua pontuação para zero, começando do início;             " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "|"  << resetCor() << " -Caso um jogador esqueça a sua password, fornecemos o mecanismo para recuperá-lo.         " << corLetra("azul") << "|"  << resetCor() << endl;
+    cout << corLetra("azul") << "---------------------------------------------------------------------------------------------" << resetCor() << endl;
 }
 
 

@@ -1,10 +1,10 @@
-tema:Quimica e Biologia,Qual é o elemento químico mais eletronegativo?,a)Hidrogênio (H),b)Oxigênio (O),c)Flúor (F),d) Cloro (Cl),c
-tema:Quimica e Biologia,Qual é a função principal dos catalisadores em reações químicas?,a) Aumentar a temperatura da reação,b) Aumentar a pressão da reação,c) Aumentar a velocidade da reação,d) Alterar o equilíbrio químico da reação,c
-tema:Quimica e Biologia,Qual é o nome dado ao processo de divisão celular que resulta em células haploides?,a)Mitose,b)Meiose,c) Replicação,d) Diferenciação,b
-tema:Quimica e Biologia,Qual é o processo de formação de esporos em fungos?,a)Fotossíntese,b)Respiração celular,c)Fragmentação,d)Esporulação,d
-tema:Quimica e Biologia,Qual é o componente principal das membranas celulares?,a) Carboidratos,b) Ácidos nucleicos,c) Lipídios,d) Proteínas,c
-tema:Quimica e Biologia,Qual é o tipo de respiração que ocorre na ausência de oxigênio?,a) Respiração aeróbica,b) Respiração anaeróbica,c) Respiração cutânea,d)Respiração pulmonar,b
-tema:Quimica e Biologia,Qual é o processo de separação de uma mistura por meio da evaporação e condensação dos componentes?,a) Destilação,b)Filtração,c)Decantação,d)Cristalização,a
-tema:Quimica e Biologia,Qual cientista desenvolveu a tabela periódica dos elementos?,a) Dmitri Mendeleev,b)Marie Curie,c)Ernest Rutherford,d)Niels Bohr,a
-tema:Quimica e Biologia,Quem é conhecido como o "pai da genética" e desenvolveu as leis da hereditariedade?,a) Thomas Morgan,b) Rosalind Franklin,c) Gregor Mendel,d) Barbara McClintock,c
-tema:Quimica e Biologia,Quem foi o cientista que descobriu a estrutura do DNA, conhecida como a dupla hélice?,a)James Watson,b)Francis Crick,c)Rosalind Franklin,d)Linus Pauling,b
+Química e Biologia,Qual é o elemento químico mais eletronegativo?,Hidrogênio (H),Oxigênio (O),Flúor (F),Cloro (Cl),Flúor (F)
+Química e Biologia,Qual é a função principal dos catalisadores em reações químicas?,Aumentar a temperatura da reação,Aumentar a pressão da reação,Aumentar a velocidade da reação,Alterar o equilíbrio químico da reação,Aumentar a velocidade da reação
+Química e Biologia,Qual é o nome dado ao processo de divisão celular que resulta em células haploides?,Mitose,Meiose,Replicação,Diferenciação,Meiose
+Química e Biologia,Qual é o processo de formação de esporos em fungos?,Fotossíntese,Respiração celular,Fragmentação,Esporulação,Esporulação
+Química e Biologia,Qual é o componente principal das membranas celulares?,Carboidratos,Ácidos nucleicos,Lipídios,Proteínas,Lipídios
+Química e Biologia,Qual é o tipo de respiração que ocorre na ausência de oxigênio?,Respiração aeróbia,Respiração anaeróbia,Respiração cutânea,Respiração pulmonar,Respiração anaeróbia
+Química e Biologia,Qual é o processo de separação de uma mistura por meio da evaporação e condensação dos componentes?,Destilação,Filtração,Decantação,Cristalização,Destilação
+Química e Biologia,Qual cientista desenvolveu a tabela periódica dos elementos?,Dmitri Mendeleev,Marie Curie,Ernest Rutherford,Niels Bohr,Dmitri Mendeleev
+Química e Biologia,Quem é conhecido como o "pai da genética" e desenvolveu as leis da hereditariedade?,Thomas Morgan,Rosalind Franklin,Gregor Mendel,Barbara McClintock,Gregor Mendel
+Química e Biologia,Quem foi o cientista que descobriu a estrutura do DNA, conhecida como a dupla hélice?,James Watson,Francis Crick,Rosalind Franklin,Linus Pauling,Francis Crick
