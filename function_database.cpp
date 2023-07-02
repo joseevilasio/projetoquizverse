@@ -26,7 +26,7 @@ struct Perguntas {
 string path(string nomeArquivo) {
     //Recebe um nome de arquivo que está na pasta assets    
 
-    fs::path caminhoAbsoluto = fs::current_path() / "assets" / nomeArquivo;
+    fs::path caminhoAbsoluto = fs::current_path() / nomeArquivo;
     fs::path caminhoRelativo = fs::relative(caminhoAbsoluto);
 
     #ifdef _WIN32
@@ -42,7 +42,7 @@ vector<Perguntas> databasePerguntas (string nomeArquivo) {
     vector<Perguntas> questoes; //Recebe as structs
     string _respostaCorreta; // string para receber resposta sem espaço
 
-    ifstream arquivo(path(nomeArquivo)); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas    
+    ifstream arquivo(path(nomeArquivo)); // recebe de acordo com tema e dificuldade escolhida o path do arquivo de perguntas  
     
     if (arquivo.is_open()){
         string linha;        

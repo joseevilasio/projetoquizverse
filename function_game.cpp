@@ -21,7 +21,7 @@ bool compararPontos(const Usuario& usuario1, const Usuario& usuario2) {
 int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
     // Abre menu de temas e dificuldades e retorna string com as informações    
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Escolha o Tema - QuizVerse - ¦ - |" << resetCor() << endl;
+    cabecalho("Escolha o Tema:");
     cout << "" << endl;
     cout << "1 > Geografia e Cultura" << endl;
     cout << "2 > Fisica e Matemática" << endl;
@@ -34,8 +34,8 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
         case 1:
             // 1 > Tema Geografia e Cultura
             limparTela();
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ -  Geografia e Cultura - QuizVerse - ¦ - |" << resetCor() << endl;
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Nível de Dificuldade - QuizVerse - ¦ - |" << resetCor() << endl;
+            cabecalho("Geografia e Cultura");
+            cabecalho("Nível de Dificuldade:");
             cout << "" << endl;
             cout << "1 > Fácil" << endl;
             cout << "2 > Médio" << endl;
@@ -49,8 +49,8 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
         case 2:
             // 2 > Tema Fisica e Matemática
             limparTela();
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ -       Fisica e Matemática        - ¦ - |" << resetCor() << endl;
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Nível de Dificuldade - QuizVerse - ¦ - |" << resetCor() << endl;
+            cabecalho("Fisica e Matemática");
+            cabecalho("Nível de Dificuldade:");
             cout << "" << endl;
             cout << "1 > Fácil" << endl;
             cout << "2 > Médio" << endl;
@@ -64,8 +64,8 @@ int escolherTema(int &opcaoTema, int &opcaoDificuldade) {
         case 3:
             // 3 > Tema Química e Biologia
             limparTela();
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ -       Química e Biologia         - ¦ - |" << resetCor() << endl;
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Nível de Dificuldade - QuizVerse - ¦ - |" << resetCor() << endl;
+            cabecalho("Química e Biologia");
+            cabecalho("Nível de Dificuldade:");
             cout << "" << endl;
             cout << "1 > Fácil" << endl;
             cout << "2 > Médio" << endl;
@@ -94,7 +94,7 @@ void ranking(){
 
     sort(_ranking.begin(), _ranking.end(), compararPontos);
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - Ranking - QuizVerse - ¦ - |" << resetCor() << endl;
+    cabecalho("Ranking");
     cout << corLetra("ciano") << "------------------------------------" << endl;     
     cout << "| # | Nome              | Pontos   |" << endl;
     cout << "------------------------------------" << endl;
@@ -104,7 +104,7 @@ void ranking(){
         size_t tamanhoString = usuario.nomeCompleto.size();
         cout << calcularEspaco(tamanhoString);
         cout << " " << usuario.pontos << endl;
-        contador ++;            
+        contador ++;
     }
 
     cout << "------------------------------------" << resetCor() << endl;
@@ -168,7 +168,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
 
         limparTela();
 
-        cout << corLetra("azul") << corFundo("branco") << "QuizVerse" << resetCor() << endl;
+        cabecalho("");
         cout << corLetra("ciano");
         consultarNome(userEmail);
         cout << " |  Pontos da partida : " << pontosUser << " | " << contador << "/10" << resetCor() << endl;
@@ -214,7 +214,7 @@ int jogar(int opcaoTema, int opcaoDificuldade, string userEmail) {
             modificarPontos(userEmail, _pontosUser); //Salva os pontos da partida no database
             return pontosUser;
             break;
-        }                       
+        }
     }
 
     return 1;
@@ -236,7 +236,7 @@ int resetPontos(string userEmail){
         limparTela();        
         cout << corLetra("vermelho") << "Reset de pontos realizado com sucesso." << resetCor() << endl;
         cout << "";
-        pressione();
+        pressione("continuar");
         return 0;
     }
     return 1;

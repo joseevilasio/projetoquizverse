@@ -102,7 +102,7 @@ int signin(){
     int opcao; //variável utilizada na escolha da pergunta de recuperação da palavra passe
     bool condicao = true; //variavel de controle da condição de parada do while
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - REGISTO - ¦ - |" << resetCor() << endl;
+    cabecalho("REGISTO");
     cout << "" << endl;
 
     cout << "Digite seu nome: ";
@@ -120,7 +120,7 @@ int signin(){
         cout << " O email '" << usuario.email << "' já está cadastrado." << endl;
         cout << " Tente novamente ou faça login!" << endl;
         cout << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
-        pressione();
+        pressione("continuar");
         return 1;
     }
 
@@ -163,11 +163,15 @@ int signin(){
     cout << "" << endl;
 
     //recurso visual de loading e apresentar que cadastro foi realizado
-    
-    //pressione();
+
+    limparTela();
+    load();
+    cout << corLetra("verde") << "Cadastro realizado com sucesso!!!" << resetCor() << endl;
+    pressione("continuar");
+
 
     //abrir o arquivo de database e salvar as informações coletadas
-    ofstream arquivo(path("database.txt"), ios::app);
+    fstream arquivo(path("C:/Users/gabri/Documents/projetoQuiz/assets/database.txt"), std::ios::in | std::ios::out);
 
     if (arquivo.is_open()) {
         arquivo << usuario.nomeCompleto << "," << usuario.email << "," << usuario.password;

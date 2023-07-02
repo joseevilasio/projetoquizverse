@@ -23,12 +23,11 @@ int validarPassword(string userEmail, string password){
 }
 
 bool recuperacaoPassword(){
-    //Solicita email e exibe pergunta de recuperação e valida se o pergunta é o que consta no banco de dados
-    
+    //Solicita email e exibe pergunta de recuperação e valida se o pergunta é o que consta no banco de dados    
     string resposta, email;
     int quantErros = 0;
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - RECUPERAÇÃO DE PALAVRA-PASSE - ¦ - |" << resetCor() << endl;
+    cabecalho("RECUPERAÇÃO DE PALAVRA-PASSE");
     cout << "Digite seu email: ";
     cin.ignore();    
     cin >> email;
@@ -37,7 +36,7 @@ bool recuperacaoPassword(){
         cout << corLetra("vermelho") << "Email não está cadastrado!" << resetCor();
         return false;
     }
-
+  
     for(const auto& usuario : databaseUsuarios()) {    
        
         if (email == usuario.email){
@@ -62,7 +61,7 @@ bool recuperacaoPassword(){
                     cout << corLetra("vermelho") << endl;
                     cout << "Resposta de recuperação inválida - Tente novamente [" << quantErros << "]" << resetCor() << endl;}
             }
-        }   
+        }
     }
     
     return false;
@@ -73,7 +72,7 @@ bool login(string &userEmail){
     int quantErros = 0;
     string userPassword;
 
-    cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - LOGIN - ¦ - |" << resetCor() << endl;    
+    cabecalho("LOGIN");    
 
     while(quantErros != 3){
 
@@ -91,14 +90,15 @@ bool login(string &userEmail){
             return true;
             break;
                 
-        } else {
-            //Se password for inválido, diminuir quantidades de tentativas.
-            quantErros += 1;
-            limparTela();            
-            cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - LOGIN - ¦ - |" << resetCor() << endl;
-            cout << corLetra("vermelho") << endl;
-            cout << "Palavra-passe inválida ou Email inválido - Tente novamente [" << quantErros << "]" << resetCor() << endl;
-        }
+
+            } else{
+                //Se password for inválido, diminuir quantidades de tentativas.
+                quantErros += 1;
+                limparTela();
+                cout << corLetra("vermelho") << endl;
+                cout << "Palavra-passe inválida ou Email inválido - Tente novamente [" << quantErros << "]" << resetCor() << endl;
+                cabecalho("LOGIN");  
+            }
     }
 
     if (quantErros == 3){
@@ -114,7 +114,7 @@ bool login(string &userEmail){
 int eliminarConta(string userEmail){
     //Recebe o argumento de email e após a confirmação apaga a conta
     int opcao;
-    
+
     cout << corLetra("azul") << corFundo("branco") << "|  - ¦ - ELIMINAR CONTA - ¦ - |" << resetCor() << endl;
     cout << corLetra("vermelho") << "Tem certeza que deseja eliminar a conta ?" << resetCor() << endl;
     cout << corLetra("vermelho") << "1 - SIM!" << resetCor() << endl;
@@ -132,7 +132,6 @@ int eliminarConta(string userEmail){
 
 int consultarPontos(string userEmail){
     //recebe email e exibe os pontos registados    
-    
     for(const auto& usuario : databaseUsuarios()) {          
         if (userEmail == usuario.email){            
             return usuario.pontos;
