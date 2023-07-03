@@ -116,10 +116,11 @@ int signin(){
 
     if (validarEmail(usuario.email) == true){
         limparTela();
+        cin.ignore();
         cout << "___________________________________________" << endl;
         cout << " O email '" << usuario.email << "' já está cadastrado." << endl;
         cout << " Tente novamente ou faça login!" << endl;
-        cout << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
+        cout << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯" << endl;
         pressione("continuar");
         return 1;
     }

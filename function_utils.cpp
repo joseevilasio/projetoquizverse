@@ -43,9 +43,9 @@ void pressione(string texto) {
 void load(){
     //A função imprime na tela loading de 0% até 100%    
     int totalTicks = 20;
+    int numero = 2;
     
-    for (int i = 0; i < totalTicks; ++i)
-    {
+    for (int i = 0; i < totalTicks; ++i){
         cout << "\r[";
         
         for (int j = 0; j <= i; ++j)
@@ -56,8 +56,11 @@ void load(){
         
         cout << "] " << (i + 1) * 5 << "%";
         cout.flush();
-        sleep(0.999);
         
+        sleep(numero);
+        if (numero == 2) {
+            numero = 0.5;
+        }
     }
     
     cout << endl;
@@ -145,12 +148,11 @@ string calcularEspaco(int tamanho) {
 
 
 
-void tempo(){
+int tempo(){
     //A função imprime na tela o tempo
     int segundos = 4;
     int segundosFinais = segundos / 2;
-    char ch;
-    
+    int resposta;    
     
     for (int cont = segundos; cont > -1; cont--){
 
@@ -167,12 +169,13 @@ void tempo(){
             cout << "\033[2K"; // Limpa a linha atual
             cout << "\033[0G"; // Retorna para a coluna inicial
             }
-        
-    }
+    }   
         
     cout << resetCor();
+    cout << ">>> ";
+    cin >> resposta;
 
-    ch = getchar(); 
+    return resposta; 
 }
 
 void cabecalho(string texto){
